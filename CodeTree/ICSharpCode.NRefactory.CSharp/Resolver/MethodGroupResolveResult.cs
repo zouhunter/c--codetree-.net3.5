@@ -165,7 +165,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 		/// </remarks>
 		public IEnumerable<IEnumerable<IMethod>> GetExtensionMethods()
 		{
-			if (resolver != null) {
+            if (resolver != null) {
 				Debug.Assert(extensionMethods == null);
 				try {
 					extensionMethods = resolver.GetExtensionMethods(methodName, typeArguments);
@@ -173,7 +173,14 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 					resolver = null;
 				}
 			}
-			return extensionMethods ?? Enumerable.Empty<IEnumerable<IMethod>>();
+            if(extensionMethods == null)
+            {
+               return Enumerable.Empty<IEnumerable<IMethod>>();
+            }
+            else
+            {
+                return extensionMethods.Select(x => x.Select(y => y));
+            }
 		}
 		
 		/// <summary>

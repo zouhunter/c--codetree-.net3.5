@@ -91,7 +91,7 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 			if (names.Count > 0) {
 				names [0] = Char.ToLower(names [0] [0]) + names [0].Substring(1);
 			}
-			yield return string.Join("", names);
+			yield return string.Join("", names.ToArray());
 		}
 
 		/// <summary>
@@ -205,7 +205,7 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 		class VariableFinderVisitor : DepthFirstAstVisitor
 		{
 
-			public ISet<string> VariableNames = new HashSet<string>();
+			public ISet<string> VariableNames = new HashSet0<string>();
 
 			public override void VisitVariableInitializer(VariableInitializer variableInitializer)
 			{

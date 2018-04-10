@@ -125,23 +125,23 @@ namespace ICSharpCode.NRefactory.CSharp
 				case UnaryOperatorType.Not:
 					return ExpressionType.Not;
 				case UnaryOperatorType.BitNot:
-					return ExpressionType.OnesComplement;
+					//return ExpressionType.OnesComplement;
 				case UnaryOperatorType.Minus:
 					return checkForOverflow ? ExpressionType.NegateChecked : ExpressionType.Negate;
 				case UnaryOperatorType.Plus:
 					return ExpressionType.UnaryPlus;
 				case UnaryOperatorType.Increment:
-					return ExpressionType.PreIncrementAssign;
+					//return ExpressionType.PreIncrementAssign;
 				case UnaryOperatorType.Decrement:
-					return ExpressionType.PreDecrementAssign;
+					//return ExpressionType.PreDecrementAssign;
 				case UnaryOperatorType.PostIncrement:
-					return ExpressionType.PostIncrementAssign;
+					//return ExpressionType.PostIncrementAssign;
 				case UnaryOperatorType.PostDecrement:
-					return ExpressionType.PostDecrementAssign;
+					//return ExpressionType.PostDecrementAssign;
 				case UnaryOperatorType.Dereference:
 				case UnaryOperatorType.AddressOf:
 				case UnaryOperatorType.Await:
-					return ExpressionType.Extension;
+					//return ExpressionType.Extension;
 				default:
 					throw new NotSupportedException("Invalid value for UnaryOperatorType");
 			}

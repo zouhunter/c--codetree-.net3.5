@@ -22,7 +22,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using ICSharpCode.NRefactory.PatternMatching;
 using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.CSharp;
@@ -175,7 +174,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteToken(Roles.LBracket);
 			if (list.Any()) {
 				Space(spaceWithin);
-				WriteCommaSeparatedList(list);
+				WriteCommaSeparatedList(list.Select(x=>x as AstNode));
 				Space(spaceWithin);
 			}
 			WriteToken(Roles.RBracket);
@@ -186,7 +185,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteToken(Roles.LBracket);
 			if (list.Any()) {
 				Space(policy.SpacesWithinBrackets);
-				WriteCommaSeparatedList(list);
+				WriteCommaSeparatedList(list.Select(x=>x as AstNode));
 				Space(policy.SpacesWithinBrackets);
 			}
 			WriteToken(Roles.RBracket);
@@ -390,7 +389,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		{
 			if (typeArguments.Any()) {
 				WriteToken(Roles.LChevron);
-				WriteCommaSeparatedList(typeArguments);
+				WriteCommaSeparatedList(typeArguments.Select(x=>x as AstNode));
 				WriteToken(Roles.RChevron);
 			}
 		}
@@ -399,7 +398,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		{
 			if (typeParameters.Any()) {
 				WriteToken(Roles.LChevron);
-				WriteCommaSeparatedList(typeParameters);
+				WriteCommaSeparatedList(typeParameters.Select(x => x as AstNode));
 				WriteToken(Roles.RChevron);
 			}
 		}
@@ -494,7 +493,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteKeyword(AnonymousMethodExpression.DelegateKeywordRole);
 			if (anonymousMethodExpression.HasParameterList) {
 				Space(policy.SpaceBeforeMethodDeclarationParentheses);
-				WriteCommaSeparatedListInParenthesis(anonymousMethodExpression.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
+				WriteCommaSeparatedListInParenthesis(anonymousMethodExpression.Parameters.Select(x => x as AstNode), policy.SpaceWithinMethodDeclarationParentheses);
 			}
 			WriteBlock(anonymousMethodExpression.Body, policy.AnonymousMethodBraceStyle);
 			EndNode(anonymousMethodExpression);
@@ -520,7 +519,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			}
 			if (undocumentedExpression.UndocumentedExpressionType != UndocumentedExpressionType.ArgListAccess) {
 				Space(policy.SpaceBeforeMethodCallParentheses);
-				WriteCommaSeparatedListInParenthesis(undocumentedExpression.Arguments, policy.SpaceWithinMethodCallParentheses);
+				WriteCommaSeparatedListInParenthesis(undocumentedExpression.Arguments.Select(x => x as AstNode), policy.SpaceWithinMethodCallParentheses);
 			}
 			EndNode(undocumentedExpression);
 		}
@@ -789,7 +788,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			StartNode(invocationExpression);
 			invocationExpression.Target.AcceptVisitor(this);
 			Space(policy.SpaceBeforeMethodCallParentheses);
-			WriteCommaSeparatedListInParenthesis(invocationExpression.Arguments, policy.SpaceWithinMethodCallParentheses);
+			WriteCommaSeparatedListInParenthesis(invocationExpression.Arguments.Select(x => x as AstNode), policy.SpaceWithinMethodCallParentheses);
 			EndNode(invocationExpression);
 		}
 		
@@ -811,7 +810,7 @@ namespace ICSharpCode.NRefactory.CSharp
 				Space();
 			}
 			if (LambdaNeedsParenthesis(lambdaExpression)) {
-				WriteCommaSeparatedListInParenthesis(lambdaExpression.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
+				WriteCommaSeparatedListInParenthesis(lambdaExpression.Parameters.Select(x => x as AstNode), policy.SpaceWithinMethodDeclarationParentheses);
 			} else {
 				lambdaExpression.Parameters.Single().AcceptVisitor(this);
 			}
@@ -885,7 +884,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			}
 			if (useParenthesis) {
 				Space(policy.SpaceBeforeMethodCallParentheses);
-				WriteCommaSeparatedListInParenthesis(objectCreateExpression.Arguments, policy.SpaceWithinMethodCallParentheses);
+				WriteCommaSeparatedListInParenthesis(objectCreateExpression.Arguments.Select(x => x as AstNode), policy.SpaceWithinMethodCallParentheses);
 			}
 			objectCreateExpression.Initializer.AcceptVisitor(this);
 			EndNode(objectCreateExpression);
@@ -1116,7 +1115,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			StartNode(queryOrderClause);
 			WriteKeyword(QueryOrderClause.OrderbyKeywordRole);
 			Space();
-			WriteCommaSeparatedList(queryOrderClause.Orderings);
+			WriteCommaSeparatedList(queryOrderClause.Orderings.Select(x => x as AstNode));
 			EndNode(queryOrderClause);
 		}
 		
@@ -1168,7 +1167,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			attribute.Type.AcceptVisitor(this);
 			if (attribute.Arguments.Count != 0 || !attribute.GetChildByRole(Roles.LPar).IsNull) {
 				Space(policy.SpaceBeforeMethodCallParentheses);
-				WriteCommaSeparatedListInParenthesis(attribute.Arguments, policy.SpaceWithinMethodCallParentheses);
+				WriteCommaSeparatedListInParenthesis(attribute.Arguments.Select(x => x as AstNode), policy.SpaceWithinMethodCallParentheses);
 			}
 			EndNode(attribute);
 		}
@@ -1182,7 +1181,7 @@ namespace ICSharpCode.NRefactory.CSharp
 				WriteToken(Roles.Colon);
 				Space();
 			}
-			WriteCommaSeparatedList(attributeSection.Attributes);
+			WriteCommaSeparatedList(attributeSection.Attributes.Select(x => x as AstNode));
 			WriteToken(Roles.RBracket);
 			if (attributeSection.Parent is ParameterDeclaration || attributeSection.Parent is TypeParameterDeclaration) {
 				Space();
@@ -1203,7 +1202,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteIdentifier(delegateDeclaration.NameToken);
 			WriteTypeParameters(delegateDeclaration.TypeParameters);
 			Space(policy.SpaceBeforeDelegateDeclarationParentheses);
-			WriteCommaSeparatedListInParenthesis(delegateDeclaration.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
+			WriteCommaSeparatedListInParenthesis(delegateDeclaration.Parameters.Select(x => x as AstNode), policy.SpaceWithinMethodDeclarationParentheses);
 			foreach (Constraint constraint in delegateDeclaration.Constraints) {
 				constraint.AcceptVisitor(this);
 			}
@@ -1257,7 +1256,7 @@ namespace ICSharpCode.NRefactory.CSharp
 				Space();
 				WriteToken(Roles.Colon);
 				Space();
-				WriteCommaSeparatedList(typeDeclaration.BaseTypes);
+				WriteCommaSeparatedList(typeDeclaration.BaseTypes.Select(x=>x as AstNode));
 			}
 			foreach (Constraint constraint in typeDeclaration.Constraints) {
 				constraint.AcceptVisitor(this);
@@ -1420,7 +1419,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			Space(policy.SpacesWithinUsingParentheses);
 			fixedStatement.Type.AcceptVisitor(this);
 			Space();
-			WriteCommaSeparatedList(fixedStatement.Variables);
+			WriteCommaSeparatedList(fixedStatement.Variables.Select(x => x as AstNode));
 			Space(policy.SpacesWithinUsingParentheses);
 			RPar();
 			WriteEmbeddedStatement(fixedStatement.EmbeddedStatement);
@@ -1454,7 +1453,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			LPar();
 			Space(policy.SpacesWithinForParentheses);
 			
-			WriteCommaSeparatedList(forStatement.Initializers);
+			WriteCommaSeparatedList(forStatement.Initializers.Select(x => x as AstNode));
 			Space(policy.SpaceBeforeForSemicolon);
 			WriteToken(Roles.Semicolon);
 			Space(policy.SpaceAfterForSemicolon);
@@ -1464,7 +1463,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteToken(Roles.Semicolon);
 			if (forStatement.Iterators.Any()) {
 				Space(policy.SpaceAfterForSemicolon);
-				WriteCommaSeparatedList(forStatement.Iterators);
+				WriteCommaSeparatedList(forStatement.Iterators.Select(x => x as AstNode));
 			}
 			
 			Space(policy.SpacesWithinForParentheses);
@@ -1750,7 +1749,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteModifiers(variableDeclarationStatement.GetChildrenByRole(VariableDeclarationStatement.ModifierRole));
 			variableDeclarationStatement.Type.AcceptVisitor(this);
 			Space();
-			WriteCommaSeparatedList(variableDeclarationStatement.Variables);
+			WriteCommaSeparatedList(variableDeclarationStatement.Variables.Select(x => x as AstNode));
 			Semicolon();
 			EndNode(variableDeclarationStatement);
 		}
@@ -1826,7 +1825,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			else
 				WriteIdentifier(constructorDeclaration.NameToken);
 			Space(policy.SpaceBeforeConstructorDeclarationParentheses);
-			WriteCommaSeparatedListInParenthesis(constructorDeclaration.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
+			WriteCommaSeparatedListInParenthesis(constructorDeclaration.Parameters.Select(x => x as AstNode), policy.SpaceWithinMethodDeclarationParentheses);
 			if (!constructorDeclaration.Initializer.IsNull) {
 				Space();
 				constructorDeclaration.Initializer.AcceptVisitor(this);
@@ -1846,7 +1845,7 @@ namespace ICSharpCode.NRefactory.CSharp
 				WriteKeyword(ConstructorInitializer.BaseKeywordRole);
 			}
 			Space(policy.SpaceBeforeMethodCallParentheses);
-			WriteCommaSeparatedListInParenthesis(constructorInitializer.Arguments, policy.SpaceWithinMethodCallParentheses);
+			WriteCommaSeparatedListInParenthesis(constructorInitializer.Arguments.Select(x => x as AstNode), policy.SpaceWithinMethodCallParentheses);
 			EndNode(constructorInitializer);
 		}
 		
@@ -1894,7 +1893,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteKeyword(EventDeclaration.EventKeywordRole);
 			eventDeclaration.ReturnType.AcceptVisitor(this);
 			Space();
-			WriteCommaSeparatedList(eventDeclaration.Variables);
+			WriteCommaSeparatedList(eventDeclaration.Variables.Select(x => x as AstNode));
 			Semicolon();
 			EndNode(eventDeclaration);
 		}
@@ -1928,7 +1927,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteModifiers(fieldDeclaration.ModifierTokens);
 			fieldDeclaration.ReturnType.AcceptVisitor(this);
 			Space();
-			WriteCommaSeparatedList(fieldDeclaration.Variables);
+			WriteCommaSeparatedList(fieldDeclaration.Variables.Select(x => x as AstNode));
 			Semicolon();
 			EndNode(fieldDeclaration);
 		}
@@ -1942,7 +1941,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			Space();
 			fixedFieldDeclaration.ReturnType.AcceptVisitor(this);
 			Space();
-			WriteCommaSeparatedList(fixedFieldDeclaration.Variables);
+			WriteCommaSeparatedList(fixedFieldDeclaration.Variables.Select(x => x as AstNode));
 			Semicolon();
 			EndNode(fixedFieldDeclaration);
 		}
@@ -1995,7 +1994,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			WriteIdentifier(methodDeclaration.NameToken);
 			WriteTypeParameters(methodDeclaration.TypeParameters);
 			Space(policy.SpaceBeforeMethodDeclarationParentheses);
-			WriteCommaSeparatedListInParenthesis(methodDeclaration.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
+			WriteCommaSeparatedListInParenthesis(methodDeclaration.Parameters.Select(x => x as AstNode), policy.SpaceWithinMethodDeclarationParentheses);
 			foreach (Constraint constraint in methodDeclaration.Constraints) {
 				constraint.AcceptVisitor(this);
 			}
@@ -2024,7 +2023,7 @@ namespace ICSharpCode.NRefactory.CSharp
 				WriteToken(OperatorDeclaration.GetToken(operatorDeclaration.OperatorType), OperatorDeclaration.GetRole(operatorDeclaration.OperatorType));
 			}
 			Space(policy.SpaceBeforeMethodDeclarationParentheses);
-			WriteCommaSeparatedListInParenthesis(operatorDeclaration.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
+			WriteCommaSeparatedListInParenthesis(operatorDeclaration.Parameters.Select(x => x as AstNode), policy.SpaceWithinMethodDeclarationParentheses);
 			WriteMethodBody(operatorDeclaration.Body, policy.MethodBraceStyle);
 			EndNode(operatorDeclaration);
 		}
@@ -2240,7 +2239,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			Space();
 			WriteToken(Roles.Colon);
 			Space();
-			WriteCommaSeparatedList(constraint.BaseTypes);
+			WriteCommaSeparatedList(constraint.BaseTypes.Select(x=>x as AstNode));
 			EndNode(constraint);
 		}
 		
@@ -2422,7 +2421,7 @@ namespace ICSharpCode.NRefactory.CSharp
 				if (documentationReference.SymbolKind == SymbolKind.Indexer) {
 					WriteCommaSeparatedListInBrackets(documentationReference.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
 				} else {
-					WriteCommaSeparatedListInParenthesis(documentationReference.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
+					WriteCommaSeparatedListInParenthesis(documentationReference.Parameters.Select(x=>x as AstNode), policy.SpaceWithinMethodDeclarationParentheses);
 				}
 			}
 			EndNode(documentationReference);

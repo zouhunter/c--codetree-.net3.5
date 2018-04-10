@@ -48,7 +48,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 #endif
 		internal static void WriteLine(string format, params object[] args)
 		{
-			Debug.WriteLine(format, args);
+			Debug.Print(format, args);
 		}
 		
 #if __MonoCS__

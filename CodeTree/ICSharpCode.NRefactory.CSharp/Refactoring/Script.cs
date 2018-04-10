@@ -334,7 +334,7 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 
 			if (dummyType.BaseTypes.Any()) {
 				sb.Append(": ");
-				sb.Append(string.Join(", ", dummyType.BaseTypes));
+				sb.Append(string.Join(", ", dummyType.BaseTypes.Select(x => x.ToString()).ToArray()));
 			}
 
 			Replace(offset, endOffset - offset, sb.ToString());

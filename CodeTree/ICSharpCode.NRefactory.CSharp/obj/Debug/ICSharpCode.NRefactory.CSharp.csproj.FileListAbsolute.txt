@@ -9,3 +9,7 @@ E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharp
 E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.dll
 E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.xml
 E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.pdb
+E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.csprojResolveAssemblyReference.cache
+E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.dll
+E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.xml
+E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.pdb

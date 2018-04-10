@@ -67,11 +67,13 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 			var endLine = currentDocument.GetLineByOffset (endOffset);
 			
 			if (startLine != null && endLine != null) {
-				bool removeStart = string.IsNullOrWhiteSpace (currentDocument.GetText (startLine.Offset, startOffset - startLine.Offset));
-				if (removeStart)
+				bool removeStart = string.IsNullOrEmpty (currentDocument.GetText (startLine.Offset, startOffset - startLine.Offset));
+                //IsNullOrWhiteSpace
+                if (removeStart)
 					startOffset = startLine.Offset;
-				bool removeEnd = string.IsNullOrWhiteSpace (currentDocument.GetText (endOffset, endLine.EndOffset - endOffset));
-				if (removeEnd)
+				bool removeEnd = string.IsNullOrEmpty(currentDocument.GetText (endOffset, endLine.EndOffset - endOffset));
+                //IsNullOrWhiteSpace
+                if (removeEnd)
 					endOffset = endLine.EndOffset;
 				
 				// Remove delimiter if the whole line get's removed.
