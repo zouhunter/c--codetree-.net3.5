@@ -1,0 +1,11 @@
+E:\Interact\NRefactory\bin\Debug\ICSharpCode.NRefactory.CSharp.dll
+E:\Interact\NRefactory\bin\Debug\ICSharpCode.NRefactory.CSharp.pdb
+E:\Interact\NRefactory\bin\Debug\ICSharpCode.NRefactory.CSharp.xml
+E:\Interact\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.csprojResolveAssemblyReference.cache
+E:\Interact\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.dll
+E:\Interact\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.xml
+E:\Interact\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.pdb
+E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.csprojResolveAssemblyReference.cache
+E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.dll
+E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.xml
+E:\Interact\NFactorys\NRefactory\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.pdb
