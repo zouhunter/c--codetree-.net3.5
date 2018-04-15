@@ -747,7 +747,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			}
 		}
 
-#if FULL_AST
+
 		public bool HasOptionalSemicolon {
 			get;
 			private set;
@@ -762,7 +762,6 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				HasOptionalSemicolon = true;
 			}
 		}
-#endif
 
 		#endregion
 

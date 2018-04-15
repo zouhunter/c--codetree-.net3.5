@@ -1698,7 +1698,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 		{
 			ILiteralConstant res;
 
-#if FULL_AST
+
 			int read_start = reader.Position - 1;
 			if (dotLead) {
 				//
@@ -1706,7 +1706,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				//
 				--read_start;
 			}
-#endif
+
 			number_pos = 0;
 			var loc = Location;
 			bool hasLeadingDot = c == '.';
@@ -1717,9 +1717,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 
 					if (peek == 'x' || peek == 'X') {
 						val = res = handle_hex (loc);
-#if FULL_AST
+
 						res.ParsedValue = reader.ReadChars (read_start, reader.Position - 1);
-#endif
 
 						return Token.LITERAL;
 					}
@@ -1744,9 +1743,9 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 					putback ('.');
 					number_pos--;
 					val = res = adjust_int (-1, loc);
-#if FULL_AST
+
 					res.ParsedValue = reader.ReadChars (read_start, reader.Position - 1);
-#endif
+
 					return Token.LITERAL;
 				}
 			}
@@ -1793,12 +1792,11 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			}
 
 			val = res;
-#if FULL_AST
+
 			var chars = reader.ReadChars (read_start, reader.Position - (type == TypeCode.Empty && c > 0 ? 1 : 0));
 			if (chars[chars.Length - 1] == '\r')
 				Array.Resize (ref chars, chars.Length - 1);
 			res.ParsedValue = chars;
-#endif
 
 			return Token.LITERAL;
 		}
@@ -2146,9 +2144,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 		bool PreProcessLine ()
 		{
 			Location loc = Location;
-			#if FULL_AST
+			
 			var lineDirective = sbag.GetCurrentLineProcessorDirective();
-			#endif
 
 			int c;
 
@@ -2193,9 +2190,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				ReadToEndOfLine ();
 				return new_line != 0;
 			}
-			#if FULL_AST
+			
 			lineDirective.LineNumber = new_line;
-			#endif
 
 			c = get_char ();
 			if (c == ' ') {
@@ -2220,9 +2216,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			string new_file_name = null;
 			if (c == '"') {
 				new_file_name = TokenizeFileName (ref c);
-				#if FULL_AST
+				
 				lineDirective.FileName = new_file_name;
-				#endif
 
 				// skip over white space
 				while (c == ' ' || c == '\t') {
@@ -2612,17 +2607,15 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			int c;
 			int startCol, endLine, endCol;
 			int length = TokenizePreprocessorIdentifier (out c, out startCol, out endLine, out endCol);
-			#if FULL_AST
+			
 			var pragmaDirective = sbag.GetPragmaPreProcessorDirective();
 			if (pragmaDirective != null)
 				pragmaDirective.WarningColumn = startCol;
-			#endif
 			if (length == pragma_warning.Length && IsTokenIdentifierEqual (pragma_warning)) {
 				length = TokenizePreprocessorIdentifier (out c, out startCol, out endLine, out endCol);
-				#if FULL_AST
+				
 				if (pragmaDirective != null)
 					pragmaDirective.DisableRestoreColumn = startCol;
-				#endif
 
 				//
 				// #pragma warning disable
@@ -2630,10 +2623,10 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				//
 				if (length == pragma_warning_disable.Length) {
 					bool disable = IsTokenIdentifierEqual (pragma_warning_disable);
-					#if FULL_AST
+					
 					if (pragmaDirective != null)
 						pragmaDirective.Disalbe = disable;
-					#endif
+				
 					if (disable || IsTokenIdentifierEqual (pragma_warning_restore)) {
 						// skip over white space
 						while (c == ' ' || c == '\t')
@@ -2663,12 +2656,12 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 								bool identifier = false;
 								code = TokenizePragmaWarningIdentifier (ref c, ref identifier);
 								if (code > 0) {
-									#if FULL_AST
+									
 									var literal = new IntConstant(context.BuiltinTypes, code, startLoc);
 									if (pragmaDirective != null)
 										pragmaDirective.Codes.Add (literal);
 								//	literal.ParsedValue = reader.ReadChars (read_start, reader.Position + 1);
-									#endif
+							
 									if (identifier) {
 										// no-op, custom warnings cannot occur in mcs
 									} else if (disable) {
@@ -3129,9 +3122,9 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				recordNewLine = false;
 			}
 
-#if FULL_AST
+
 			int reader_pos = reader.Position;
-#endif
+
 
 			while (true){
 				// Cannot use get_char because of \r in quoted strings
@@ -3156,11 +3149,11 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 
 					ILiteralConstant res = new StringLiteral (context.BuiltinTypes, CreateStringFromBuilder (pos), start_location);
 					val = res;
-#if FULL_AST
+
 					res.ParsedValue = quoted ?
 						reader.ReadChars (reader_pos - 2, reader.Position - 1) :
 						reader.ReadChars (reader_pos - 1, reader.Position);
-#endif
+
 					recordNewLine = true;
 					return Token.LITERAL;
 				}
@@ -3298,15 +3291,13 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			}
 
 			string s = InternIdentifier (id_builder, pos);
-#if FULL_AST
+
 			if (quoted) {
 				val = ltb.Create ("@" + s, current_source, ref_line, column - 1);
 			} else {
 				val = ltb.Create (s, current_source, ref_line, column);
 			}
-#else
-			val = ltb.Create (s, current_source, ref_line, column);
-#endif
+
 			if (quoted && parsing_attribute_section)
 				AddEscapedIdentifier (((LocatedToken) val).Location);
 
@@ -3900,9 +3891,9 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 
 		int TokenizeBackslash ()
 		{
-#if FULL_AST
+
 			int read_start = reader.Position;
-#endif
+
 			Location start_location = Location;
 			int c = get_char ();
 			tokens_seen = true;
@@ -3938,9 +3929,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				}
 			}
 
-#if FULL_AST
+
 			res.ParsedValue = reader.ReadChars (read_start - 1, reader.Position);
-#endif
 
 			return Token.LITERAL;
 		}

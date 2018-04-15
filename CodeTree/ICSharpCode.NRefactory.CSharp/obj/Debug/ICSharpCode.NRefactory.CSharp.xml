@@ -7475,6 +7475,15 @@
               The algorithm to do that is a little bit complicated.
             </summary>
         </member>
+        <member name="T:ICSharpCode.NRefactory.MonoCSharp.SeekableStreamReader">
+             <summary>
+               This is an arbitrarily seekable StreamReader wrapper.
+            
+               It uses a self-tuning buffer to cache the seekable data,
+               but if the seek is too far, it may read the underly
+               stream all over from the beginning.
+             </summary>
+        </member>
         <member name="P:ICSharpCode.NRefactory.MonoCSharp.SeekableStreamReader.Position">
             <remarks>
               This value corresponds to the current position in a stream of characters.

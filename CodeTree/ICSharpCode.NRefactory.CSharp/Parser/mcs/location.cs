@@ -175,17 +175,12 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			}
 		}
 
-#if FULL_AST
+
 		readonly long token;
 
 		const int column_bits = 24;
 		const int line_delta_bits = 24;
-#else
-		readonly int token;
 
-		const int column_bits = 8;
-		const int line_delta_bits = 8;
-#endif
 		const int checkpoint_bits = 16;
 
 		const int column_mask = (1 << column_bits) - 1;
@@ -269,11 +264,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				long l = column +
 					(delta << column_bits) +
 					(target << (line_delta_bits + column_bits));
-#if FULL_AST
+
 				token = l;
-#else
-				token = l > 0xFFFFFFFF ? 0 : (int) l;
-#endif
 			}
 		}
 
@@ -624,7 +616,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			}
 		}
 
-		#if FULL_AST
+		
 		public PragmaPreProcessorDirective SetPragmaDisable(bool disable)
 		{
 			if (Suppress)
@@ -635,7 +627,6 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			pragmaDirective.Disalbe = disable;
 			return pragmaDirective;
 		}
-		#endif
 
 		public PragmaPreProcessorDirective GetPragmaPreProcessorDirective()
 		{

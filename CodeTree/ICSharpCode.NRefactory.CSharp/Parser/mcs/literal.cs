@@ -30,9 +30,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 {
 	public interface ILiteralConstant
 	{
-#if FULL_AST
 		char[] ParsedValue { get; set; }
-#endif
 	}
 
 	//
@@ -94,9 +92,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -115,9 +112,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -152,10 +148,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
-		public char[] ParsedValue { get; set; }
-#endif
 
+		public char[] ParsedValue { get; set; }
 		public override object Accept (StructuralVisitor visitor)
 		{
 			return visitor.Visit (this);
@@ -173,9 +167,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -194,9 +187,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -215,9 +207,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -236,9 +227,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -279,9 +269,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -300,9 +289,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
@@ -321,9 +309,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			get { return true; }
 		}
 
-#if FULL_AST
+
 		public char[] ParsedValue { get; set; }
-#endif
 
 		public override object Accept (StructuralVisitor visitor)
 		{
