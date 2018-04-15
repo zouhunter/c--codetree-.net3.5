@@ -37,9 +37,9 @@ using System.Runtime.InteropServices;
 
 // We keep the AssemblyVersion at 5.0.0.0 for all versions of NRefactory 5.
 // This eliminates the need for binding redirects.
-[assembly: AssemblyVersion("5.0.0.0")]
+[assembly: AssemblyVersion("3.5.0.0")]
 
 // [AssemblyFileVersion] is the version of the NuGet package,
 // Versions with breaking changes / new features should increment the 'minor' (2nd) number.
 // Bugfix releases should increment the 'build' (3rd) number.
-[assembly: AssemblyFileVersion("5.5.1")]
+[assembly: AssemblyFileVersion("3.5.1")]

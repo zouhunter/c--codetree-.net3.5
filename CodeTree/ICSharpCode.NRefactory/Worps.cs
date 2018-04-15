@@ -27,7 +27,7 @@ namespace System.Collections.Concurrent
         {
             this.Instance = instence;
         }
-        internal S GetOrAdd(T key, S value)
+        public S GetOrAdd(T key, S value)
         {
             if (!ContainsKey(key))
             {
@@ -36,7 +36,7 @@ namespace System.Collections.Concurrent
             return value;
         }
 
-        internal bool TryAdd(T key, S value)
+        public bool TryAdd(T key, S value)
         {
             if (!ContainsKey(key))
             {

@@ -20,6 +20,9 @@ E:\Interact\CodeTree\CodeTree\bin\Debug\ICSharpCode.NRefactory.xml
 E:\Interact\cs-codetree-.net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.dll
 E:\Interact\cs-codetree-.net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.pdb
 E:\Interact\cs-codetree-.net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.xml
+E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory\bin\x64\Debug\ICSharpCode.NRefactory.dll
+E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory\bin\x64\Debug\ICSharpCode.NRefactory.pdb
+E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory\bin\x64\Debug\ICSharpCode.NRefactory.xml
 E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory\obj\Debug\ICSharpCode.NRefactory.dll
 E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory\obj\Debug\ICSharpCode.NRefactory.xml
 E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory\obj\Debug\ICSharpCode.NRefactory.pdb
