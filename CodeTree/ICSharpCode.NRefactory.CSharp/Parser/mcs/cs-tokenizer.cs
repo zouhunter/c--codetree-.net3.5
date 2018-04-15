@@ -156,7 +156,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			//
 			// Used for token not required by expression evaluator
 			//
-			[Conditional ("FULL_AST")]
+			//[Conditional ("FULL_AST")]
 			public void CreateOptional (SourceFile file, int row, int col, ref object token)
 			{
 				token = Create (file, row, col);

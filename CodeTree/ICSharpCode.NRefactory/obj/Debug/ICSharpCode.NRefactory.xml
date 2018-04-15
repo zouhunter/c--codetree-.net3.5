@@ -618,6 +618,29 @@
             after the inserted text.
             </summary>
         </member>
+        <member name="T:ICSharpCode.NRefactory.Editor.ITextPasteHandler">
+            <summary>
+            The text paste handler can do formattings to a text that is about to be pasted
+            into the text document.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.Editor.ITextPasteHandler.FormatPlainText(System.Int32,System.String,System.Byte[])">
+            <summary>
+            Formats plain text that is inserted at a specified offset.
+            </summary>
+            <returns>
+            The text that will get inserted at that position.
+            </returns>
+            <param name="offset">The offset where the text will be inserted.</param>
+            <param name="text">The text to be inserted.</param>
+            <param name="copyData">Additional data in case the text was copied from a Mono.TextEditor.</param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.Editor.ITextPasteHandler.GetCopyData(ICSharpCode.NRefactory.Editor.ISegment)">
+            <summary>
+            Gets the copy data for a specific segment inside the document. This can contain additional information.
+            </summary>
+            <param name="segment">The text segment that is about to be copied.</param>
+        </member>
         <member name="T:ICSharpCode.NRefactory.Editor.ITextSource">
             <summary>
             A read-only view on a (potentially mutable) text source.
@@ -1178,28 +1201,146 @@
             </summary>
             <param name="change">Change from current version to new version</param>
         </member>
-        <member name="T:ICSharpCode.NRefactory.Editor.ITextPasteHandler">
+        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.LF">
             <summary>
-            The text paste handler can do formattings to a text that is about to be pasted
-            into the text document.
+            Line Feed, U+000A
             </summary>
         </member>
-        <member name="M:ICSharpCode.NRefactory.Editor.ITextPasteHandler.FormatPlainText(System.Int32,System.String,System.Byte[])">
+        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.CR">
             <summary>
-            Formats plain text that is inserted at a specified offset.
+            Carriage Return, U+000D
             </summary>
-            <returns>
-            The text that will get inserted at that position.
-            </returns>
-            <param name="offset">The offset where the text will be inserted.</param>
-            <param name="text">The text to be inserted.</param>
-            <param name="copyData">Additional data in case the text was copied from a Mono.TextEditor.</param>
         </member>
-        <member name="M:ICSharpCode.NRefactory.Editor.ITextPasteHandler.GetCopyData(ICSharpCode.NRefactory.Editor.ISegment)">
+        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.NEL">
             <summary>
-            Gets the copy data for a specific segment inside the document. This can contain additional information.
+            Next Line, U+0085
             </summary>
-            <param name="segment">The text segment that is about to be copied.</param>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.VT">
+            <summary>
+            Vertical Tab, U+000B
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.FF">
+            <summary>
+            Form Feed, U+000C
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.LS">
+            <summary>
+            Line Separator, U+2028
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.PS">
+            <summary>
+            Paragraph Separator, U+2029
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.NewLine">
+            <summary>
+            Defines unicode new lines according to  Unicode Technical Report #13
+            http://www.unicode.org/standard/reports/tr13/tr13-5.html
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.NewLine.CR">
+            <summary>
+            Carriage Return, U+000D
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.NewLine.LF">
+            <summary>
+            Line Feed, U+000A
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.NewLine.NEL">
+            <summary>
+            Next Line, U+0085
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.NewLine.VT">
+            <summary>
+            Vertical Tab, U+000B
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.NewLine.FF">
+            <summary>
+            Form Feed, U+000C
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.NewLine.LS">
+            <summary>
+            Line Separator, U+2028
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.NewLine.PS">
+            <summary>
+            Paragraph Separator, U+2029
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterLength(System.Char,System.Func{System.Char})">
+            <summary>
+            Determines if a char is a new line delimiter.
+            </summary>
+            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
+            <param name="curChar">The current character.</param>
+            <param name="nextChar">A callback getting the next character (may be null).</param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterLength(System.Char,System.Char)">
+            <summary>
+            Determines if a char is a new line delimiter.
+            </summary>
+            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
+            <param name="curChar">The current character.</param>
+            <param name="nextChar">The next character (if != LF then length will always be 0 or 1).</param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.TryGetDelimiterLengthAndType(System.Char,System.Int32@,ICSharpCode.NRefactory.UnicodeNewline@,System.Func{System.Char})">
+            <summary>
+            Determines if a char is a new line delimiter.
+            </summary>
+            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
+            <param name="curChar">The current character.</param>
+            <param name = "length">The length of the delimiter</param>
+            <param name = "type">The type of the delimiter</param>
+            <param name="nextChar">A callback getting the next character (may be null).</param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.TryGetDelimiterLengthAndType(System.Char,System.Int32@,ICSharpCode.NRefactory.UnicodeNewline@,System.Char)">
+            <summary>
+            Determines if a char is a new line delimiter.
+            </summary>
+            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
+            <param name="curChar">The current character.</param>
+            <param name = "length">The length of the delimiter</param>
+            <param name = "type">The type of the delimiter</param>
+            <param name="nextChar">The next character (if != LF then length will always be 0 or 1).</param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterType(System.Char,System.Func{System.Char})">
+            <summary>
+            Gets the new line type of a given char/next char.
+            </summary>
+            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
+            <param name="curChar">The current character.</param>
+            <param name="nextChar">A callback getting the next character (may be null).</param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterType(System.Char,System.Char)">
+            <summary>
+            Gets the new line type of a given char/next char.
+            </summary>
+            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
+            <param name="curChar">The current character.</param>
+            <param name="nextChar">The next character (if != LF then length will always be 0 or 1).</param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.IsNewLine(System.Char)">
+            <summary>
+            Determines if a char is a new line delimiter. 
+            
+            Note that the only 2 char wide new line is CR LF and both chars are new line
+            chars on their own. For most cases GetDelimiterLength is the better choice.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.NewLine.GetString(ICSharpCode.NRefactory.UnicodeNewline)">
+            <summary>
+            Gets the new line as a string.
+            </summary>
         </member>
         <member name="T:ICSharpCode.NRefactory.IAnnotatable">
             <summary>
@@ -6370,147 +6511,6 @@
         <member name="F:ICSharpCode.NRefactory.Refactoring.Severity.Hint">
             <summary>
             Hints are shown in blue and doesn't influence the task bar state
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.LF">
-            <summary>
-            Line Feed, U+000A
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.CR">
-            <summary>
-            Carriage Return, U+000D
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.NEL">
-            <summary>
-            Next Line, U+0085
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.VT">
-            <summary>
-            Vertical Tab, U+000B
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.FF">
-            <summary>
-            Form Feed, U+000C
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.LS">
-            <summary>
-            Line Separator, U+2028
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.UnicodeNewline.PS">
-            <summary>
-            Paragraph Separator, U+2029
-            </summary>
-        </member>
-        <member name="T:ICSharpCode.NRefactory.NewLine">
-            <summary>
-            Defines unicode new lines according to  Unicode Technical Report #13
-            http://www.unicode.org/standard/reports/tr13/tr13-5.html
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.NewLine.CR">
-            <summary>
-            Carriage Return, U+000D
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.NewLine.LF">
-            <summary>
-            Line Feed, U+000A
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.NewLine.NEL">
-            <summary>
-            Next Line, U+0085
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.NewLine.VT">
-            <summary>
-            Vertical Tab, U+000B
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.NewLine.FF">
-            <summary>
-            Form Feed, U+000C
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.NewLine.LS">
-            <summary>
-            Line Separator, U+2028
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.NewLine.PS">
-            <summary>
-            Paragraph Separator, U+2029
-            </summary>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterLength(System.Char,System.Func{System.Char})">
-            <summary>
-            Determines if a char is a new line delimiter.
-            </summary>
-            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
-            <param name="curChar">The current character.</param>
-            <param name="nextChar">A callback getting the next character (may be null).</param>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterLength(System.Char,System.Char)">
-            <summary>
-            Determines if a char is a new line delimiter.
-            </summary>
-            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
-            <param name="curChar">The current character.</param>
-            <param name="nextChar">The next character (if != LF then length will always be 0 or 1).</param>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.TryGetDelimiterLengthAndType(System.Char,System.Int32@,ICSharpCode.NRefactory.UnicodeNewline@,System.Func{System.Char})">
-            <summary>
-            Determines if a char is a new line delimiter.
-            </summary>
-            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
-            <param name="curChar">The current character.</param>
-            <param name = "length">The length of the delimiter</param>
-            <param name = "type">The type of the delimiter</param>
-            <param name="nextChar">A callback getting the next character (may be null).</param>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.TryGetDelimiterLengthAndType(System.Char,System.Int32@,ICSharpCode.NRefactory.UnicodeNewline@,System.Char)">
-            <summary>
-            Determines if a char is a new line delimiter.
-            </summary>
-            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
-            <param name="curChar">The current character.</param>
-            <param name = "length">The length of the delimiter</param>
-            <param name = "type">The type of the delimiter</param>
-            <param name="nextChar">The next character (if != LF then length will always be 0 or 1).</param>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterType(System.Char,System.Func{System.Char})">
-            <summary>
-            Gets the new line type of a given char/next char.
-            </summary>
-            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
-            <param name="curChar">The current character.</param>
-            <param name="nextChar">A callback getting the next character (may be null).</param>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.GetDelimiterType(System.Char,System.Char)">
-            <summary>
-            Gets the new line type of a given char/next char.
-            </summary>
-            <returns>0 == no new line, otherwise it returns either 1 or 2 depending of the length of the delimiter.</returns>
-            <param name="curChar">The current character.</param>
-            <param name="nextChar">The next character (if != LF then length will always be 0 or 1).</param>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.IsNewLine(System.Char)">
-            <summary>
-            Determines if a char is a new line delimiter. 
-            
-            Note that the only 2 char wide new line is CR LF and both chars are new line
-            chars on their own. For most cases GetDelimiterLength is the better choice.
-            </summary>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.NewLine.GetString(ICSharpCode.NRefactory.UnicodeNewline)">
-            <summary>
-            Gets the new line as a string.
             </summary>
         </member>
     </members>

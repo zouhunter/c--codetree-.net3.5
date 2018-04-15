@@ -15741,7 +15741,7 @@ TypeContainer pop_current_class ()
 	return retval;
 }
 
-[System.Diagnostics.Conditional ("FULL_AST")]
+//[System.Diagnostics.Conditional ("FULL_AST")]
 void StoreModifierLocation (object token, Location loc)
 {
 	if (lbag == null)
@@ -15760,7 +15760,7 @@ List<Tuple<Modifiers, Location>> GetModifierLocations ()
 	return result;
 }
 
-[System.Diagnostics.Conditional ("FULL_AST")]
+//[System.Diagnostics.Conditional ("FULL_AST")]
 void PushLocation (Location loc)
 {
 	if (location_stack == null)

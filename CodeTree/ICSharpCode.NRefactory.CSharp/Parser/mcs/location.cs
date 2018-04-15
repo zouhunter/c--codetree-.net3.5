@@ -551,7 +551,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 		int startLine, startCol;
 		System.Text.StringBuilder contentBuilder = new System.Text.StringBuilder ();
 		
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void StartComment (CommentType type, bool startsLine, int startLine, int startCol)
 		{
 			if (Suppress)
@@ -564,7 +564,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			contentBuilder.Length = 0;
 		}
 		
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void PushCommentChar (int ch)
 		{
 			if (Suppress)
@@ -573,7 +573,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 				return;
 			contentBuilder.Append ((char)ch);
 		}
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void PushCommentString (string str)
 		{
 			if (Suppress)
@@ -582,7 +582,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 		}
 		
 		bool inComment;
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void EndComment (int endLine, int endColumn)
 		{
 			if (Suppress)
@@ -596,7 +596,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			Specials.Add (new Comment (curComment, startsLine, startLine, startCol, endLine, endColumn, contentBuilder.ToString ()));
 		}
 		
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AddPreProcessorDirective (int startLine, int startCol, int endLine, int endColumn, Tokenizer.PreprocessorDirective cmd, string arg)
 		{
 			if (Suppress)
@@ -647,7 +647,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 
 		int lastNewLine = -1;
 		int lastNewCol = -1;
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AddNewLine (int line, int col, NewLine newLine)
 		{
 			if (Suppress)
@@ -762,13 +762,13 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 		Dictionary<object, List<Location>> simple_locs = new Dictionary<object, List<Location>> (ReferenceEquality<object>.Default);
 		Dictionary<MemberCore, MemberLocations> member_locs = new Dictionary<MemberCore, MemberLocations> (ReferenceEquality<MemberCore>.Default);
 
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AddLocation (object element, params Location[] locations)
 		{
 			AddLocation (element, (IEnumerable<Location>)locations);
 		}
 
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AddLocation (object element, IEnumerable<Location> locations)
 		{
 			if (element == null || locations == null)
@@ -781,7 +781,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			found.AddRange(locations);
 		}
 
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void InsertLocation (object element, int index, Location location)
 		{
 			List<Location> found;
@@ -793,7 +793,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			found.Insert (index, location);
 		}
 
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AddStatement (object element, params Location[] locations)
 		{
 			if (element == null)
@@ -803,7 +803,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			simple_locs.Add (element, new List<Location>(locations));
 		}
 
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AddMember (MemberCore member, IList<Tuple<Modifiers, Location>> modLocations, params Location[] locations)
 		{
 			LastMember = member;
@@ -819,7 +819,7 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			member_locs.Add (member, new MemberLocations (modLocations, locations));
 		}
 
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AddMember (MemberCore member, IList<Tuple<Modifiers, Location>> modLocations, IEnumerable<Location> locations)
 		{
 			LastMember = member;
@@ -835,14 +835,14 @@ if (checkpoints.Length <= CheckpointIndex) throw new Exception (String.Format ("
 			member_locs.Add (member, new MemberLocations (modLocations, locations));
 		}
 
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AppendToMember (MemberCore existing, params Location[] locations)
 		{
 			AppendToMember (existing, (IEnumerable<Location>)locations);
 
 		}
 		
-		[Conditional ("FULL_AST")]
+		//[Conditional ("FULL_AST")]
 		public void AppendToMember (MemberCore existing, IEnumerable<Location> locations)
 		{
 			if (existing == null)

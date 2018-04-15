@@ -34,7 +34,12 @@ namespace ICSharpCode.NRefactory.CSharp
 		Modifiers modifier;
 		
 		public Modifiers Modifier {
-			get { return modifier; }
+
+			get {
+                //UnityEngine.Debug.Log(modifier);
+                return modifier;
+            }
+
 			set { 
 				ThrowIfFrozen();
 				this.modifier = value; 

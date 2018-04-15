@@ -145,16 +145,18 @@
     <Compile Include="Documentation\DocumentationComment.cs" />
     <Compile Include="Documentation\GetPotentiallyNestedClassTypeReference.cs" />
     <Compile Include="Documentation\IDocumentationProvider.cs" />
-    <Compile Include="Editor\IDocument.cs" />
-    <Compile Include="Editor\IDocumentLine.cs" />
-    <Compile Include="Editor\ISegment.cs" />
-    <Compile Include="Editor\ITextAnchor.cs" />
-    <Compile Include="Editor\ITextSource.cs" />
-    <Compile Include="Editor\ReadOnlyDocument.cs" />
-    <Compile Include="Editor\StringBuilderDocument.cs" />
-    <Compile Include="Editor\StringTextSource.cs" />
-    <Compile Include="Editor\TextChangeEventArgs.cs" />
-    <Compile Include="Editor\TextSourceVersionProvider.cs" />
+    <Compile Include="Editor_\IDocument.cs" />
+    <Compile Include="Editor_\IDocumentLine.cs" />
+    <Compile Include="Editor_\ISegment.cs" />
+    <Compile Include="Editor_\ITextAnchor.cs" />
+    <Compile Include="Editor_\ITextPasteHandler.cs" />
+    <Compile Include="Editor_\ITextSource.cs" />
+    <Compile Include="Editor_\ReadOnlyDocument.cs" />
+    <Compile Include="Editor_\StringBuilderDocument.cs" />
+    <Compile Include="Editor_\StringTextSource.cs" />
+    <Compile Include="Editor_\TextChangeEventArgs.cs" />
+    <Compile Include="Editor_\TextSourceVersionProvider.cs" />
+    <Compile Include="Editor_\UnicodeNewline.cs" />
     <Compile Include="IAnnotatable.cs" />
     <Compile Include="PatternMatching\BacktrackingInfo.cs" />
     <Compile Include="PatternMatching\Choice.cs" />
@@ -343,11 +345,9 @@
     <Compile Include="Refactoring\Severity.cs" />
     <Compile Include="Analysis\SymbolCollector.cs" />
     <Compile Include="TypeSystem\AssemblyLoader.cs" />
-    <Compile Include="Editor\UnicodeNewline.cs" />
     <Compile Include="Completion\FrameworkLookup.cs" />
     <Compile Include="Utils\ComparableList.cs" />
     <Compile Include="PatternMatching\AnyNodeOrNull.cs" />
-    <Compile Include="Editor\ITextPasteHandler.cs" />
     <Compile Include="Worps.cs" />
   </ItemGroup>
   <ItemGroup />

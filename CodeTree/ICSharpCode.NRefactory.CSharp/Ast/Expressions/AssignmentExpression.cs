@@ -175,6 +175,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		
 		public static ExpressionType GetLinqNodeType(AssignmentOperatorType op, bool checkForOverflow)
 		{
+            Console.WriteLine("GetLinqNodeType:" + op);
 			switch (op) {
     //            case AssignmentOperatorType.Assign:
     //                return ExpressionType.Assign;
