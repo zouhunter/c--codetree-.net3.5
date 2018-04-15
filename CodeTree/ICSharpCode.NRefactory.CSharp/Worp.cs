@@ -4,52 +4,28 @@ using System.Linq;
 using System.Text;
 using ICSharpCode.NRefactory.CSharp.Refactoring;
 
-namespace System.Threading.Tasks
-{
-    public class TaskCompletionSource<T>
-    {
-        public Task Task { get; set; }
-        internal void SetResult(object p)
-        {
-           
-        }
-    }
-    public class Task
-    {
-        public bool IsCompleted { get; internal set; }
 
-        internal void ContinueWith(Action action, object p2)
-        {
-        }
-    }
-    public class Task<T> : Task
-    {
-        internal T Result;
-    }
-    public class TaskScheduler
-    {
-        internal static object FromCurrentSynchronizationContext()
-        {
-            throw new NotImplementedException();
-        }
-    }
-}
 namespace ICSharpCode.NRefactory.CSharp
 {
-    public class HashSet0<T> : HashSet<T>, ISet<T>
+    public class HeshSet<T> : ISet<T>
     {
+        public List<string> keys = new List<string>();
         public void Add(string name)
         {
+            if(!keys.Contains(name))
+            {
+                keys.Add(name);
+            }
         }
 
         public bool Contains(AstNode node)
         {
-            return false;
+            return keys.Find(x=>x == node.ToString()) != null;
         }
 
         public bool Contains(string name)
         {
-            return false;
+            return keys.Contains(name);
         }
 
 

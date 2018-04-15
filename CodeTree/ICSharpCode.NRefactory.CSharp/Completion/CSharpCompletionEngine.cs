@@ -883,7 +883,7 @@ namespace ICSharpCode.NRefactory.CSharp.Completion
 									}
 								}
 								if (token == "+=") {
-									string parameterDefinition = AddDelegateHandlers(
+									/*string parameterDefinition = */AddDelegateHandlers(
 										wrapper,
 										delegateType,
 										optDelegateName: GuessEventHandlerMethodName(curTokenIndex, (currentType == null) ? null : currentType.Name)

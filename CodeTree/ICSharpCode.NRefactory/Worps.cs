@@ -29,19 +29,26 @@ namespace System.Collections.Concurrent
         }
         public S GetOrAdd(T key, S value)
         {
-            if (!ContainsKey(key))
+            lock (Instance)
             {
-                this[key] = value;
+                if (!ContainsKey(key))
+                {
+                    this[key] = value;
+                }
             }
+          
             return value;
         }
 
         public bool TryAdd(T key, S value)
         {
-            if (!ContainsKey(key))
+            lock (Instance)
             {
-                this[key] = value;
-                return true;
+                if (!ContainsKey(key))
+                {
+                    this[key] = value;
+                    return true;
+                }
             }
             return false;
         }

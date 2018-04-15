@@ -38,7 +38,7 @@ namespace ICSharpCode.NRefactory.TypeSystem.Implementation
 		
 		SymbolKind ownerType;
 		VarianceModifier variance;
-		BitVector16 flags;
+		public BitVector16 flags;
 		const ushort FlagFrozen                       = 0x0001;
 		const ushort FlagReferenceTypeConstraint      = 0x0002;
 		const ushort FlagValueTypeConstraint          = 0x0004;

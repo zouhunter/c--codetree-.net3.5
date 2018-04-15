@@ -545,8 +545,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 		public int AnonymousMethodsCounter;
 		public int MethodGroupsCounter;
 
-		static readonly string[] attribute_targets = new [] { "type" };
-		static readonly string[] attribute_targets_primary = new [] { "type", "method" };
+		static readonly string[] attribute_targets =  { "type" };
+		static readonly string[] attribute_targets_primary ={ "type", "method" };
 
 		/// <remarks>
 		///  The pending methods that need to be implemented
@@ -638,28 +638,63 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 				return (caching_flags & Flags.HasInstanceConstructor) != 0;
 			}
 			set {
-				caching_flags |= Flags.HasInstanceConstructor;
-			}
+                if(value)
+                {
+                    caching_flags |= Flags.HasInstanceConstructor;
+                }
+                else
+                {
+                    caching_flags ^= Flags.HasInstanceConstructor;
+                }
+            }
 		}
 
 		// Indicated whether container has StructLayout attribute set Explicit
-		public bool HasExplicitLayout {
-			get { return (caching_flags & Flags.HasExplicitLayout) != 0; }
-			set { caching_flags |= Flags.HasExplicitLayout; }
-		}
+		public bool HasExplicitLayout
+        {
+            get { return (caching_flags & Flags.HasExplicitLayout) != 0; }
+            set
+            {
+                if (value)
+                {
+                    caching_flags |= Flags.HasExplicitLayout;
+                }
+                else
+                {
+                    caching_flags ^= Flags.HasExplicitLayout;
+                }
+            }
+        }
 
 		public bool HasOperators {
 			get {
 				return (caching_flags & Flags.HasUserOperators) != 0;
 			}
 			set {
-				caching_flags |= Flags.HasUserOperators;
+                if (value)
+                {
+                    caching_flags |= Flags.HasUserOperators;
+                }
+                else
+                {
+                    caching_flags ^= Flags.HasUserOperators;
+                }
 			}
 		}
 
 		public bool HasStructLayout {
 			get { return (caching_flags & Flags.HasStructLayout) != 0; }
-			set { caching_flags |= Flags.HasStructLayout; }
+			set
+            {
+                if (value)
+                {
+                    caching_flags |= Flags.HasStructLayout;
+                }
+                else
+                {
+                    caching_flags ^= Flags.HasStructLayout;
+                }
+            }
 		}
 
 		public TypeSpec[] Interfaces {
@@ -3381,7 +3416,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 								"object.Finalize()");
 						} else {
 							Report.Error (115, Location, "`{0}' is marked as an override but no suitable {1} found to override",
-								GetSignatureForError (), SimpleName.GetMemberType (this));
+								GetSignatureForError (), ATypeNameExpression.GetMemberType (this));
 						}
 					} else {
 						Report.SymbolRelatedToPreviousError (candidate);

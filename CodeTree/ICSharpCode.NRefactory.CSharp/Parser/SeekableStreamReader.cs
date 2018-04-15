@@ -37,14 +37,14 @@ namespace ICSharpCode.NRefactory.MonoCSharp
     ///   but if the seek is too far, it may read the underly
     ///   stream all over from the beginning.
     /// </summary>
-    public partial class SeekableStreamReader : IDisposable
+    public class SeekableStreamReader : IDisposable
     {
         public const int DefaultReadAheadSize = 2048;
 
         readonly ITextSource textSource;
 
         int pos;
-
+        char[] StreamReaderBuffer;
         static string GetAllText(Stream stream, Encoding encoding)
         {
             using (var rdr = new StreamReader(stream, encoding))
@@ -55,6 +55,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 
         public SeekableStreamReader(Stream stream, Encoding encoding, char[] sharedBuffer = null) : this(new StringTextSource(GetAllText(stream, encoding)))
         {
+            this.StreamReaderBuffer = sharedBuffer;
+            Console.WriteLine(StreamReaderBuffer);
         }
 
         public SeekableStreamReader(ITextSource source)
@@ -112,4 +114,74 @@ namespace ICSharpCode.NRefactory.MonoCSharp
         }
     }
 }
+//   public partial class SeekableStreamReader : IDisposable
+//{
+//	public const int DefaultReadAheadSize = 2048;
+
+//	readonly ITextSource textSource;
+
+//	int pos;
+
+//	static string GetAllText(Stream stream, Encoding encoding) {
+//		using (var rdr = new StreamReader(stream, encoding)) {
+//			return rdr.ReadToEnd();
+//		}
+//	}
+
+//	public SeekableStreamReader (Stream stream, Encoding encoding, char[] sharedBuffer = null) : this(new StringTextSource(GetAllText(stream, encoding)))
+//	{
+//	}
+
+//	public SeekableStreamReader (ITextSource source)
+//	{
+//		this.textSource = source;
+//	}
+
+
+//	public void Dispose ()
+//	{
+//	}
+
+//	/// <remarks>
+//	///   This value corresponds to the current position in a stream of characters.
+//	///   The StreamReader hides its manipulation of the underlying byte stream and all
+//	///   character set/decoding issues.  Thus, we cannot use this position to guess at
+//	///   the corresponding position in the underlying byte stream even though there is
+//	///   a correlation between them.
+//	/// </remarks>
+//	public int Position {
+//		get {
+//			return pos;
+//		}
+
+//		set {
+//			pos = value;
+//		}
+//	}
+
+//	public char GetChar (int position)
+//	{
+//		return textSource.GetCharAt (position);
+//	}
+
+//	public char[] ReadChars (int fromPosition, int toPosition)
+//	{
+//		return textSource.GetText (fromPosition, toPosition - fromPosition).ToCharArray ();
+//	}
+
+//	public int Peek ()
+//	{
+//		if (pos >= textSource.TextLength)
+//			return -1;
+//		return textSource.GetCharAt (pos);
+//	}
+
+//	public int Read ()
+//	{
+//		if (pos >= textSource.TextLength)
+//			return -1;
+//		return textSource.GetCharAt (pos++);
+//	}
+//}
+//}
 

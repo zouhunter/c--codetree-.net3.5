@@ -29,7 +29,7 @@ using System.Diagnostics;
 using System.IO;
 using ICSharpCode.NRefactory.Editor;
 using ICSharpCode.NRefactory.TypeSystem;
-using System.Threading.Tasks;
+
 using System.Linq;
 using System.Text;
 using ICSharpCode.NRefactory.MonoCSharp;
@@ -356,21 +356,21 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 			InsertBefore(node, attr);
 		}
 
-		public virtual Task Link (params AstNode[] nodes)
-		{
-			// Default implementation: do nothing
-			// Derived classes are supposed to enter the text editor's linked state.
+		//public virtual Task Link (params AstNode[] nodes)
+		//{
+		//	// Default implementation: do nothing
+		//	// Derived classes are supposed to enter the text editor's linked state.
 			
-			// Immediately signal the task as completed:
-			var tcs = new TaskCompletionSource<object>();
-			tcs.SetResult(null);
-			return tcs.Task;
-		}
+		//	// Immediately signal the task as completed:
+		//	var tcs = new TaskCompletionSource();
+		//	tcs.SetResult(null);
+		//	return tcs.Task;
+		//}
 
-		public virtual Task Link (IEnumerable<AstNode> nodes)
-		{
-			return Link(nodes.ToArray());
-		}
+		//public virtual Task Link (IEnumerable<AstNode> nodes)
+		//{
+		//	return Link(nodes.ToArray());
+		//}
 		
 		public void Replace (AstNode node, AstNode replaceWith)
 		{
@@ -458,27 +458,27 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 			End
 		}
 		
-		public virtual Task<Script> InsertWithCursor(string operation, InsertPosition defaultPosition, IList<AstNode> nodes)
-		{
-			throw new NotImplementedException();
-		}
+		//public virtual Task<Script> InsertWithCursor(string operation, InsertPosition defaultPosition, IList<AstNode> nodes)
+		//{
+		//	throw new NotImplementedException();
+		//}
 		
-		public virtual Task<Script> InsertWithCursor(string operation, ITypeDefinition parentType, Func<Script, RefactoringContext, IList<AstNode>> nodeCallback)
-		{
-			throw new NotImplementedException();
-		}
+		//public virtual Task<Script> InsertWithCursor(string operation, ITypeDefinition parentType, Func<Script, RefactoringContext, IList<AstNode>> nodeCallback)
+		//{
+		//	throw new NotImplementedException();
+		//}
 		
-		public Task<Script> InsertWithCursor(string operation, InsertPosition defaultPosition, params AstNode[] nodes)
-		{
-			return InsertWithCursor(operation, defaultPosition, (IList<AstNode>)nodes);
-		}
+		//public Task<Script> InsertWithCursor(string operation, InsertPosition defaultPosition, params AstNode[] nodes)
+		//{
+		//	return InsertWithCursor(operation, defaultPosition, (IList<AstNode>)nodes);
+		//}
 
-		public Task<Script> InsertWithCursor(string operation, ITypeDefinition parentType, Func<Script, RefactoringContext, AstNode> nodeCallback)
-		{
-			return InsertWithCursor(operation, parentType, (Func<Script, RefactoringContext, IList<AstNode>>)delegate (Script s, RefactoringContext ctx) {
-				return new AstNode[] { nodeCallback(s, ctx) };
-			});
-		}
+		//public Task<Script> InsertWithCursor(string operation, ITypeDefinition parentType, Func<Script, RefactoringContext, AstNode> nodeCallback)
+		//{
+		//	return InsertWithCursor(operation, parentType, (Func<Script, RefactoringContext, IList<AstNode>>)delegate (Script s, RefactoringContext ctx) {
+		//		return new AstNode[] { nodeCallback(s, ctx) };
+		//	});
+		//}
 		
 		protected virtual int GetIndentLevelAt (int offset)
 		{
@@ -626,26 +626,26 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 
 	public static class ExtMethods
 	{
-		public static void ContinueScript (this Task task, Action act)
-		{
-			if (task.IsCompleted) {
-				act();
-			} else {
-				task.ContinueWith(delegate {
-					act();
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-			}
-		}
+		//public static void ContinueScript (this Task task, Action act)
+		//{
+		//	if (task.IsCompleted) {
+		//		act();
+		//	} else {
+		//		task.ContinueWith(delegate {
+		//			act();
+		//		}, TaskScheduler.FromCurrentSynchronizationContext());
+		//	}
+		//}
 
-		public static void ContinueScript (this Task<Script> task, Action<Script> act)
-		{
-			if (task.IsCompleted) {
-				act(task.Result);
-			} else {
-				task.ContinueWith(delegate {
-					act(task.Result);
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-			}
-		}
+		//public static void ContinueScript (this Task<Script> task, Action<Script> act)
+		//{
+		//	if (task.IsCompleted) {
+		//		act(task.Result);
+		//	} else {
+		//		task.ContinueWith(delegate {
+		//			act(task.Result);
+		//		}, TaskScheduler.FromCurrentSynchronizationContext());
+		//	}
+		//}
 	}
 }

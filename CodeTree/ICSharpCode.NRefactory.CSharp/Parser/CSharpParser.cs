@@ -469,13 +469,13 @@ namespace ICSharpCode.NRefactory.CSharp
 				AddToNamespace(ud);
 			}
 
-			public override void Visit(UsingClause un)
+			public override void Visit(UsingClause usingClause)
 			{
 				var ud = new UsingDeclaration();
-				var loc = LocationsBag.GetLocations(un);
-				ud.AddChild(new CSharpTokenNode(Convert(un.Location), UsingDeclaration.UsingKeywordRole), UsingDeclaration.UsingKeywordRole);
-				if (un.NamespaceExpression != null)
-					ud.AddChild(ConvertToType(un.NamespaceExpression), UsingDeclaration.ImportRole);
+				var loc = LocationsBag.GetLocations(usingClause);
+				ud.AddChild(new CSharpTokenNode(Convert(usingClause.Location), UsingDeclaration.UsingKeywordRole), UsingDeclaration.UsingKeywordRole);
+				if (usingClause.NamespaceExpression != null)
+					ud.AddChild(ConvertToType(usingClause.NamespaceExpression), UsingDeclaration.ImportRole);
 				if (loc != null)
 					ud.AddChild(new CSharpTokenNode(Convert(loc [0]), Roles.Semicolon), Roles.Semicolon);
 				AddToNamespace(ud);

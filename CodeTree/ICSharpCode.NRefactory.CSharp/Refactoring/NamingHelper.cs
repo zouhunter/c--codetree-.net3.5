@@ -205,7 +205,7 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 		class VariableFinderVisitor : DepthFirstAstVisitor
 		{
 
-			public ISet<string> VariableNames = new HashSet0<string>();
+			public ISet<string> VariableNames = new HeshSet<string>();
 
 			public override void VisitVariableInitializer(VariableInitializer variableInitializer)
 			{

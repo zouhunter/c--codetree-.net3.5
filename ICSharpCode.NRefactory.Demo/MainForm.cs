@@ -45,5 +45,10 @@ namespace ICSharpCode.NRefactory.Demo
 			//
 			InitializeComponent();
 		}
-	}
+
+        private void csDemo1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

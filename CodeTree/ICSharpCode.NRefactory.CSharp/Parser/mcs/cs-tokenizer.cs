@@ -1709,7 +1709,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 
 			number_pos = 0;
 			var loc = Location;
-			bool hasLeadingDot = c == '.';
+			//bool hasLeadingDot = c == '.';
 
 			if (!dotLead){
 				if (c == '0'){

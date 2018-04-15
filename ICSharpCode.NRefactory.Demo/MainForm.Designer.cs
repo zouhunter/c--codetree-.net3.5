@@ -46,80 +46,79 @@ namespace ICSharpCode.NRefactory.Demo
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.miniToolStrip = new System.Windows.Forms.ToolStrip();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.csDemo1 = new ICSharpCode.NRefactory.Demo.CSDemo();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.tabPage1.SuspendLayout();
-			this.tabControl1.SuspendLayout();
-			this.tabPage2.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// miniToolStrip
-			// 
-			this.miniToolStrip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.miniToolStrip.AutoSize = false;
-			this.miniToolStrip.CanOverflow = false;
-			this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-			this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-			this.miniToolStrip.Location = new System.Drawing.Point(13, 3);
-			this.miniToolStrip.Name = "miniToolStrip";
-			this.miniToolStrip.Size = new System.Drawing.Size(16, 25);
-			this.miniToolStrip.TabIndex = 3;
-			// 
-			// tabPage1
-			// 
-			this.tabPage1.Controls.Add(this.csDemo1);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(507, 458);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "C#";
-			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// csDemo1
-			// 
-			this.csDemo1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.csDemo1.Location = new System.Drawing.Point(3, 3);
-			this.csDemo1.Name = "csDemo1";
-			this.csDemo1.Size = new System.Drawing.Size(501, 452);
-			this.csDemo1.TabIndex = 0;
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(515, 484);
-			this.tabControl1.TabIndex = 0;
-			// 
-			// tabPage2
-			// 
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(507, 458);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "VB";
-			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// MainForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(515, 484);
-			this.Controls.Add(this.tabControl1);
-			this.Name = "MainForm";
-			this.Text = "NRefactory Demo";
-			this.tabPage1.ResumeLayout(false);
-			this.tabControl1.ResumeLayout(false);
-			this.tabPage2.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.miniToolStrip = new System.Windows.Forms.ToolStrip();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.csDemo1 = new ICSharpCode.NRefactory.Demo.CSDemo();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // miniToolStrip
+            // 
+            this.miniToolStrip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.CanOverflow = false;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.miniToolStrip.Location = new System.Drawing.Point(13, 3);
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.Size = new System.Drawing.Size(16, 25);
+            this.miniToolStrip.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.csDemo1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(507, 421);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "C#";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // csDemo1
+            // 
+            this.csDemo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.csDemo1.Location = new System.Drawing.Point(3, 3);
+            this.csDemo1.Name = "csDemo1";
+            this.csDemo1.Size = new System.Drawing.Size(501, 415);
+            this.csDemo1.TabIndex = 0;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(515, 447);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(507, 421);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "VB";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(515, 447);
+            this.Controls.Add(this.tabControl1);
+            this.Name = "MainForm";
+            this.Text = "NRefactory Demo";
+            this.tabPage1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.TabPage tabPage2;
 		private ICSharpCode.NRefactory.Demo.CSDemo csDemo1;
