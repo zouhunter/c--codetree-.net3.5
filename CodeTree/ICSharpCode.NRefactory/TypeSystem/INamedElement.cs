@@ -17,7 +17,7 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using System.Diagnostics.Contracts;
+
 
 namespace ICSharpCode.NRefactory.TypeSystem
 {

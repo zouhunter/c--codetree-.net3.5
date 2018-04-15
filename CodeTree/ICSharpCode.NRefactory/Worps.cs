@@ -53,20 +53,13 @@ namespace System.Threading
     public class CancellationToken
     {
         public static CancellationToken None { get; set; }
-        public bool IsCancellationRequested { get; }
+        public bool IsCancellationRequested { get; set; }
         public void ThrowIfCancellationRequested()
         {
         }
     }
 }
-namespace ICSharpCode.NRefactory.Contracts
-{
 
-}
-namespace System.Diagnostics.Contracts
-{
-
-}
 namespace ICSharpCode.NRefactory.TypeSystem
 {
     public static class LazyInitializer

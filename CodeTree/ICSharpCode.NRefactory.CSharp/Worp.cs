@@ -8,7 +8,7 @@ namespace System.Threading.Tasks
 {
     public class TaskCompletionSource<T>
     {
-        public Task Task { get; }
+        public Task Task { get; set; }
         internal void SetResult(object p)
         {
            

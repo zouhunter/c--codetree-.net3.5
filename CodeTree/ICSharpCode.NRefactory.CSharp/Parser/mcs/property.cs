@@ -190,7 +190,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 
 		public class GetMethod : PropertyMethod
 		{
-			static readonly string[] attribute_targets = new string [] { "method", "return" };
+			static readonly string[] attribute_targets = { "method", "return" };
 
 			internal const string Prefix = "get_";
 
@@ -638,9 +638,9 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 		{
 			PropertyBuilder = Parent.TypeBuilder.DefineProperty (
 				GetFullName (MemberName), PropertyAttributes.None,
-#if !BOOTSTRAP_BASIC	// Requires trunk version mscorlib
-				IsStatic ? 0 : CallingConventions.HasThis,
-#endif
+//#if !BOOTSTRAP_BASIC	// Requires trunk version mscorlib
+//				IsStatic ? 0 : CallingConventions.HasThis,
+//#endif
 				MemberType.GetMetaInfo (), null, null,
 				parameters.GetMetaInfo (), null, null);
 
@@ -1101,8 +1101,8 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 		}
 
 
-		static readonly string[] attribute_targets = new string [] { "event", "field", "method" };
-		static readonly string[] attribute_targets_interface = new string[] { "event", "method" };
+		static readonly string[] attribute_targets = { "event", "field", "method" };
+		static readonly string[] attribute_targets_interface = { "event", "method" };
 
 		Expression initializer;
 		Field backing_field;
@@ -1234,7 +1234,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp
 			protected readonly Event method;
 			readonly ParametersCompiled parameters;
 
-			static readonly string[] attribute_targets = new string [] { "method", "param", "return" };
+			static readonly string[] attribute_targets = { "method", "param", "return" };
 
 			public const string AddPrefix = "add_";
 			public const string RemovePrefix = "remove_";
