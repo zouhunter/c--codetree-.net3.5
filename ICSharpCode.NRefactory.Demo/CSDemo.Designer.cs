@@ -53,7 +53,7 @@ namespace ICSharpCode.NRefactory.Demo
 			this.csharpTreeView = new System.Windows.Forms.TreeView();
 			this.csharpGenerateCodeButton = new System.Windows.Forms.Button();
 			this.csharpParseButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
@@ -167,7 +167,7 @@ namespace ICSharpCode.NRefactory.Demo
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel1.PerformLayout();
 			this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}

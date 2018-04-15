@@ -32,7 +32,7 @@ using ICSharpCode.NRefactory.Semantics;
 namespace ICSharpCode.NRefactory.CSharp
 {
 //	[ContextAction("Removes a field from a class", Description = "It removes also the empty assingments and the usages")]
-	public class RemoveFieldRefactoryAction : ICodeActionProvider
+	public class RemoveFieldRefactoryAction
 	{
 		public IEnumerable<CodeAction> GetActions(RefactoringContext context)
 		{

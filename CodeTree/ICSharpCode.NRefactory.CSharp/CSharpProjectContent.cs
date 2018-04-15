@@ -30,7 +30,7 @@ namespace ICSharpCode.NRefactory.CSharp
 	[Serializable]
 	public class CSharpProjectContent : IProjectContent
 	{
-		string assemblyName;
+        string assemblyName;
 		string fullAssemblyName;
 		string projectFileName;
 		string location;
