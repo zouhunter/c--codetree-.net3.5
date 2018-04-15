@@ -2999,7 +2999,7 @@ namespace ICSharpCode.NRefactory.CSharp.Completion
 				return null;
 
 			if (resolvedNode.Parent is PointerReferenceExpression && (type is PointerType)) {
-				resolveResult = new OperatorResolveResult(((PointerType)type).ElementType, System.Linq.Expressions.ExpressionType.Extension, resolveResult);
+				resolveResult = new OperatorResolveResult(((PointerType)type).ElementType,System.Linq.Expressions.ExpressionType.Add /*System.Linq.Expressions.ExpressionType.Extension*/, resolveResult);
 			}
 
 			//var typeDef = resolveResult.Type.GetDefinition();

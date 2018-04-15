@@ -705,17 +705,30 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 		{
 			bool c1IsBetter = false;
 			bool c2IsBetter = false;
-			foreach (var pair in t1.Zip(t2, (a,b) => new { Item1 = a, Item2 = b })) {
-				switch (MoreSpecificFormalParameter(pair.Item1, pair.Item2)) {
-					case 1:
-						c1IsBetter = true;
-						break;
-					case 2:
-						c2IsBetter = true;
-						break;
-				}
-			}
-			if (c1IsBetter && !c2IsBetter)
+            //foreach (var pair in t1.Zip(t2, (a,b) => new { Item1 = a, Item2 = b })) {
+            //	switch (MoreSpecificFormalParameter(pair.Item1, pair.Item2)) {
+            //		case 1:
+            //			c1IsBetter = true;
+            //			break;
+            //		case 2:
+            //			c2IsBetter = true;
+            //			break;
+            //	}
+            //}
+            var array1 = t1.ToArray();
+            var array2 = t2.ToArray();
+            for (int i = 0; i < t1.Count(); i++)
+            {
+                switch (MoreSpecificFormalParameter(array1[i], array2[i])) {
+                    case 1:
+                        c1IsBetter = true;
+                        break;
+                    case 2:
+                        c2IsBetter = true;
+                        break;
+                }
+            }
+                if (c1IsBetter && !c2IsBetter)
 				return 1;
 			if (!c1IsBetter && c2IsBetter)
 				return 2;
