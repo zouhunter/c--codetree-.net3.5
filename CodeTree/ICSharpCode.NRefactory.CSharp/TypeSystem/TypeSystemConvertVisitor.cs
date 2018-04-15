@@ -1280,9 +1280,11 @@ namespace ICSharpCode.NRefactory.CSharp.TypeSystem
 		{
 			using (var reader = new StringReader(content)) {
 				string firstLine = reader.ReadLine();
-				// Add first line only if it's not empty:
-				if (!string.IsNullOrWhiteSpace(firstLine)) {
-					if (firstLine[0] == ' ')
+                // Add first line only if it's not empty:
+                //if (!string.IsNullOrWhiteSpace(firstLine)) {
+               if (!string.IsNullOrEmpty(firstLine)) {
+
+                if (firstLine[0] == ' ')
 						b.Append(firstLine, 1, firstLine.Length - 1);
 					else
 						b.Append(firstLine);
@@ -1293,7 +1295,7 @@ namespace ICSharpCode.NRefactory.CSharp.TypeSystem
 				while ((line = reader.ReadLine()) != null)
 					lines.Add(line);
 				// If the last line (the line with '*/' delimiter) is white space only, ignore it.
-				if (lines.Count > 0 && string.IsNullOrWhiteSpace(lines[lines.Count - 1]))
+				if (lines.Count > 0 && !string.IsNullOrEmpty(lines[lines.Count - 1])/* string.IsNullOrWhiteSpace(lines[lines.Count - 1])*/)
 					lines.RemoveAt(lines.Count - 1);
 				if (lines.Count > 0) {
 					// Extract pattern from lines[0]: whitespace, asterisk, whitespace

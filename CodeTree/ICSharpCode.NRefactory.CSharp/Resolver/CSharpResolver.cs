@@ -1162,18 +1162,18 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 		IEnumerable<IParameterizedMember> GetUserDefinedOperatorCandidates(IType type, string operatorName)
 		{
 			if (operatorName == null)
-				return EmptyList<IMethod>.Instance;
+				return EmptyList<IMethod>.Instance.Select(x=>x as IParameterizedMember);
 			TypeCode c = ReflectionHelper.GetTypeCode(type);
 			if (TypeCode.Boolean <= c && c <= TypeCode.Decimal || c == TypeCode.String) {
 				// The .NET framework contains some of C#'s built-in operators as user-defined operators.
 				// However, we must not use those as user-defined operators (we would skip numeric promotion).
-				return EmptyList<IMethod>.Instance;
-			}
+				return EmptyList<IMethod>.Instance.Select(x => x as IParameterizedMember);
+            }
 			// C# 4.0 spec: §7.3.5 Candidate user-defined operators
 			var operators = type.GetMethods(m => m.IsOperator && m.Name == operatorName).ToList();
 			LiftUserDefinedOperators(operators);
-			return operators;
-		}
+			return operators.Select(x => x as IParameterizedMember);
+        }
 		
 		void LiftUserDefinedOperators(List<IMethod> operators)
 		{
@@ -2273,7 +2273,9 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 
 			if (allApplicable != null && allApplicable.Count > 1) {
 				// If we have dynamic arguments, we need to represent the invocation as a dynamic invocation if there is more than one applicable constructor.
-				return new DynamicInvocationResolveResult(new MethodGroupResolveResult(null, allApplicable[0].Name, new[] { new MethodListWithDeclaringType(type, allApplicable) }, null), DynamicInvocationType.ObjectCreation, AddArgumentNamesIfNecessary(arguments, argumentNames), initializerStatements);
+				return new DynamicInvocationResolveResult(new MethodGroupResolveResult(null, allApplicable[0].Name,
+                    new[] { new MethodListWithDeclaringType(type, allApplicable.Select(x=>x as IParameterizedMember) )}, null), DynamicInvocationType.ObjectCreation,
+                    AddArgumentNamesIfNecessary(arguments, argumentNames), initializerStatements);
 			}
 
 			if (or.BestCandidate != null) {
@@ -2330,7 +2332,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 			if (t != null) {
 				if (t.TypeParameterCount != 0) {
 					// Self-parameterize the type
-					return new ThisResolveResult(new ParameterizedType(t, t.TypeParameters));
+					return new ThisResolveResult(new ParameterizedType(t, t.TypeParameters.Select(x=>x as IType)));
 				} else {
 					return new ThisResolveResult(t);
 				}

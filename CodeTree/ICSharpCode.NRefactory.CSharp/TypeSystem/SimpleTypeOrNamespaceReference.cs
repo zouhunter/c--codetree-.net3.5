@@ -25,6 +25,8 @@ using ICSharpCode.NRefactory.Semantics;
 using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.TypeSystem.Implementation;
 using ICSharpCode.NRefactory.Utils;
+using System.Linq;
+
 
 namespace ICSharpCode.NRefactory.CSharp.TypeSystem
 {
@@ -85,7 +87,7 @@ namespace ICSharpCode.NRefactory.CSharp.TypeSystem
 			if (typeArguments.Count == 0)
 				return identifier;
 			else
-				return identifier + "<" + string.Join(",", typeArguments) + ">";
+				return identifier + "<" + string.Join(",", typeArguments.Select(x=>x.ToString()).ToArray()) + ">";
 		}
 		
 		int ISupportsInterning.GetHashCodeForInterning()

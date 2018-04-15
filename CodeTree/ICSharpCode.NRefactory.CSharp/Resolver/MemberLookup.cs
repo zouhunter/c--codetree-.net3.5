@@ -178,11 +178,13 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 			foreach (IType type in targetResolveResult.Type.GetNonInterfaceBaseTypes()) {
 				
 				List<IEntity> entities = new List<IEntity>();
-				entities.AddRange(type.GetMembers(options: GetMemberOptions.IgnoreInheritedMembers));
+                var members = type.GetMembers(options: GetMemberOptions.IgnoreInheritedMembers);
+
+                entities.AddRange(members.Select(x=>x as IEntity));
 				if (!targetIsTypeParameter) {
 					var nestedTypes = type.GetNestedTypes(options: GetMemberOptions.IgnoreInheritedMembers | GetMemberOptions.ReturnMemberDefinitions);
 					// GetDefinition() might return null if some IType has a strange implementation of GetNestedTypes.
-					entities.AddRange(nestedTypes.Select(t => t.GetDefinition()).Where(td => td != null));
+					entities.AddRange(nestedTypes.Select(t => t.GetDefinition()).Where(td => td != null).Select(x => x as IEntity));
 				}
 				
 				foreach (var entityGroup in entities.GroupBy(e => e.Name)) {
@@ -389,7 +391,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 				} else {
 					// No need to check for isInvocation/isInvocable here:
 					// we only fetch methods
-					members = type.GetMethods(typeArguments, memberFilter, GetMemberOptions.IgnoreInheritedMembers);
+					members = type.GetMethods(typeArguments,x=> memberFilter(x), GetMemberOptions.IgnoreInheritedMembers).Select(x=>x as IMember);
 				}
 				AddMembers(type, members, allowProtectedAccess, lookupGroups, false, ref typeBaseTypes, ref newMethods, ref newNonMethod);
 				
@@ -428,7 +430,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 				IEnumerable<IType> typeBaseTypes = null;
 				
 				var members = type.GetProperties(filter, GetMemberOptions.IgnoreInheritedMembers);
-				AddMembers(type, members, allowProtectedAccess, lookupGroups, true, ref typeBaseTypes, ref newMethods, ref newNonMethod);
+				AddMembers(type, members.Select(x=>x as IMember), allowProtectedAccess, lookupGroups, true, ref typeBaseTypes, ref newMethods, ref newNonMethod);
 				
 				if (newMethods != null || newNonMethod != null)
 					lookupGroups.Add(new LookupGroup(type, null, newMethods, newNonMethod));

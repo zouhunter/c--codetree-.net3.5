@@ -2298,7 +2298,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 			public override Conversion IsValid(IType[] parameterTypes, IType returnType, CSharpConversions conversions)
 			{
 				Log.WriteLine("Testing validity of {0} for parameters ({1}) and return-type {2}...",
-				              this, string.Join<IType>(", ", parameterTypes), returnType);
+				              this, string.Join(", ",Array.ConvertAll<IType,string>( parameterTypes,x=>x.ToString())), returnType);
 				Log.Indent();
 				var hypothesis = GetHypothesis(parameterTypes);
 				Conversion c = hypothesis.IsValid(returnType, conversions);
@@ -3518,7 +3518,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 			
 			public override string ToString()
 			{
-				return string.Format("[QueryExpressionLambda ({0}) => {1}]", string.Join(",", parameters.Select(p => p.Name)), bodyExpression);
+				return string.Format("[QueryExpressionLambda ({0}) => {1}]", string.Join(",", parameters.Select(p => p.Name).ToArray()), bodyExpression);
 			}
 		}
 		
@@ -4042,7 +4042,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 						return errorResult;
 					if (documentationReference.HasParameterList) {
 						var ctors = typeDef.GetConstructors(options: GetMemberOptions.IgnoreInheritedMembers | GetMemberOptions.ReturnMemberDefinitions);
-						return FindByParameters(ctors, parameters);
+						return FindByParameters(ctors.Select(x => x as IParameterizedMember), parameters);
 					} else {
 						return new TypeResolveResult(typeDef);
 					}
@@ -4063,7 +4063,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 				return errorResult;
 			if (documentationReference.SymbolKind == SymbolKind.Indexer) {
 				var indexers = declaringTypeDef.Properties.Where(p => p.IsIndexer && !p.IsExplicitInterfaceImplementation);
-				return FindByParameters(indexers, parameters);
+				return FindByParameters(indexers.Select(x=>x as IParameterizedMember), parameters);
 			} else if (documentationReference.SymbolKind == SymbolKind.Operator) {
 				var opType = documentationReference.OperatorType;
 				string memberName = OperatorDeclaration.GetName(opType);
@@ -4079,7 +4079,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 					return new MemberResolveResult(null, methods.FirstOrDefault());
 				} else {
 					// not a conversion operator
-					return FindByParameters(methods, parameters);
+					return FindByParameters(methods.Select(x=>x as IParameterizedMember), parameters);
 				}
 			} else {
 				throw new NotSupportedException(); // unknown entity type

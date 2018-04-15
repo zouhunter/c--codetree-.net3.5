@@ -139,17 +139,19 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 				}
 				this.classTypeArguments = classTypeArguments;
 				Log.WriteLine("Type Inference");
-				Log.WriteLine("  Signature: M<" + string.Join<TP>(", ", this.typeParameters) + ">"
-				              + "(" + string.Join<IType>(", ", this.parameterTypes) + ")");
+                Log.WriteLine("  Signature: M<" + string.Join(", ", 
+                    Array.ConvertAll<TP, string>(this.typeParameters, x => x.ToString())) + ">"+ "(" +  string.Join(", ",
+                    Array.ConvertAll<IType, string>(this.parameterTypes, x => x.ToString())) + ")");
 				Log.WriteCollection("  Arguments: ", arguments);
 				Log.Indent();
 				
 				PhaseOne();
 				success = PhaseTwo();
-				
-				Log.Unindent();
+
+                Log.Unindent();
+                var array = this.typeParameters.Select(tp => tp.FixedTo ?? SpecialType.UnknownType).ToArray();
 				Log.WriteLine("  Type inference finished " + (success ? "successfully" : "with errors") + ": " +
-				              "M<" + string.Join(", ", this.typeParameters.Select(tp => tp.FixedTo ?? SpecialType.UnknownType)) + ">");
+				              "M<" + string.Join(", ", Array.ConvertAll<IType, string>(array, x => x.ToString())) + ">");
 				return this.typeParameters.Select(tp => tp.FixedTo ?? SpecialType.UnknownType).ToArray();
 			} finally {
 				Reset();
@@ -936,7 +938,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 					bool success;
 					IType[] result = InferTypeArgumentsFromBounds(
 						candidateDef.TypeParameters,
-						new ParameterizedType(candidateDef, candidateDef.TypeParameters),
+						new ParameterizedType(candidateDef, candidateDef.TypeParameters.Select(x=>x as IType)),
 						lowerBounds, upperBounds,
 						out success);
 					if (success) {

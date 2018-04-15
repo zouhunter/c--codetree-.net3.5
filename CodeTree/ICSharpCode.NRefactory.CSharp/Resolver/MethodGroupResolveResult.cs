@@ -219,7 +219,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 				if (outputGroup.Count > 0)
 					result.Add(outputGroup);
 			}
-			return result;
+			return result.Select(x=>x.Select(y=>y));
 		}
 		
 		public override string ToString()

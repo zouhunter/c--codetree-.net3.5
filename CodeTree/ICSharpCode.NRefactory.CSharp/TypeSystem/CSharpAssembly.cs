@@ -281,7 +281,7 @@ namespace ICSharpCode.NRefactory.CSharp.TypeSystem
 			}
 			
 			IEnumerable<INamespace> INamespace.ChildNamespaces {
-				get { return childNamespaces; }
+				get { return childNamespaces.Select(x=> x as INamespace); }
 			}
 			
 			IEnumerable<ITypeDefinition> INamespace.Types {

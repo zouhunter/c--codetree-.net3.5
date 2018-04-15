@@ -176,9 +176,9 @@ namespace ICSharpCode.NRefactory.CSharp
 		public static ExpressionType GetLinqNodeType(AssignmentOperatorType op, bool checkForOverflow)
 		{
 			switch (op) {
-				case AssignmentOperatorType.Assign:
-					return ExpressionType.Assign;
-				case AssignmentOperatorType.Add:
+                case AssignmentOperatorType.Assign:
+                    return ExpressionType.Assign;
+                case AssignmentOperatorType.Add:
 					return checkForOverflow ? ExpressionType.AddAssignChecked : ExpressionType.AddAssign;
 				case AssignmentOperatorType.Subtract:
 					return checkForOverflow ? ExpressionType.SubtractAssignChecked : ExpressionType.SubtractAssign;
