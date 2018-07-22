@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 
 using System;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public class EnumMemberDeclaration : EntityDeclaration
 	{

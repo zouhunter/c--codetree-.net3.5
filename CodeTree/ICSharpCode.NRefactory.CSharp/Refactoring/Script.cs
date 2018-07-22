@@ -27,15 +27,15 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.TypeSystem;
 
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.MonoCSharp;
-using ITypeDefinition = ICSharpCode.NRefactory.TypeSystem.ITypeDefinition;
+using IUnityCode.NRefactory.MonoCSharp;
+using ITypeDefinition = IUnityCode.NRefactory.TypeSystem.ITypeDefinition;
 
-namespace ICSharpCode.NRefactory.CSharp.Refactoring
+namespace IUnityCode.NRefactory.CSharp.Refactoring
 {
 	/// <summary>
 	/// Class for creating change scripts.

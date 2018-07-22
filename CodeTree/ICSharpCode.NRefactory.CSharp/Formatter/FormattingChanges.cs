@@ -24,14 +24,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Editor;
 using System.Threading;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.Refactoring;
+using IUnityCode.NRefactory.TypeSystem;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// The formatting changes are used to format a specific region inside a document and apply a minimal formatting

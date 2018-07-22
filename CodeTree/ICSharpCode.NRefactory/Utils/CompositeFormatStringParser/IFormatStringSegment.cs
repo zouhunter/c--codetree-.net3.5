@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.Utils
+namespace IUnityCode.NRefactory.Utils
 {
 	/// <summary>
 	/// Composite format string parser.

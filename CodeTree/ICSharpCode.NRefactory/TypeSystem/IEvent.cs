@@ -18,9 +18,9 @@
 
 using System;
 
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	public interface IUnresolvedEvent : IUnresolvedMember
 	{

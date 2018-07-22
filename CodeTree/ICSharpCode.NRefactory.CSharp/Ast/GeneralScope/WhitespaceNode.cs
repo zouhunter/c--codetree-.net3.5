@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 
 using System;
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// A Whitespace node contains only whitespaces.

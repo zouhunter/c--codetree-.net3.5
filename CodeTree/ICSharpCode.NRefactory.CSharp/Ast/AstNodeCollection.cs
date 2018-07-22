@@ -21,9 +21,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using ICSharpCode.NRefactory.PatternMatching;
+using IUnityCode.NRefactory.PatternMatching;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Represents the children of an AstNode that have a specific role.

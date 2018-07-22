@@ -19,7 +19,7 @@
 using System;
 using System.IO;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public abstract class TokenWriter
 	{

@@ -18,7 +18,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.Utils
+namespace IUnityCode.NRefactory.Utils
 {
 	/// <summary>
 	/// Platform-specific code.

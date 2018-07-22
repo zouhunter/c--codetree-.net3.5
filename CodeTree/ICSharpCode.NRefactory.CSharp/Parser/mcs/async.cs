@@ -23,7 +23,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 #endif
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
 	public class Await : ExpressionStatement
 	{

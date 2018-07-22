@@ -19,10 +19,10 @@
 using System;
 using System.Linq;
 using System.Diagnostics;
-using ICSharpCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Editor;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp.Refactoring
+namespace IUnityCode.NRefactory.CSharp.Refactoring
 {
 	/// <summary>
 	/// Script implementation based on IDocument.
@@ -108,7 +108,7 @@ namespace ICSharpCode.NRefactory.CSharp.Refactoring
 			foreach (var node in nodes.OrderByDescending (n => n.StartLocation)) {
 				var segment = GetSegment(node);
 				
-				formatter.AddFormattingRegion (new ICSharpCode.NRefactory.TypeSystem.DomRegion (
+				formatter.AddFormattingRegion (new IUnityCode.NRefactory.TypeSystem.DomRegion (
 					currentDocument.GetLocation (segment.Offset), 
 					currentDocument.GetLocation (segment.EndOffset)
 					));

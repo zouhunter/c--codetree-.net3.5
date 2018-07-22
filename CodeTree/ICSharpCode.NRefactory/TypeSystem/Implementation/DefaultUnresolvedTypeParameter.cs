@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	/// <summary>
 	/// Default implementation of <see cref="IUnresolvedTypeParameter"/>.

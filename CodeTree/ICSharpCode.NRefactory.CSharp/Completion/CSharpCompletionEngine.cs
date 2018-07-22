@@ -27,15 +27,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.Completion;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using IUnityCode.NRefactory.Completion;
+using IUnityCode.NRefactory.CSharp.Refactoring;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp.Completion
+namespace IUnityCode.NRefactory.CSharp.Completion
 {
 	public enum EditorBrowsableBehavior
 	{
@@ -1237,7 +1237,7 @@ namespace ICSharpCode.NRefactory.CSharp.Completion
 						csResolver = new CSharpResolver(ctx);
 						var nodes = new List<AstNode>();
 						nodes.Add(n);
-						if (n.Parent is ICSharpCode.NRefactory.CSharp.Attribute) {
+						if (n.Parent is IUnityCode.NRefactory.CSharp.Attribute) {
 							nodes.Add(n.Parent);
 						}
 						var astResolver = CompletionContextProvider.GetResolver(csResolver, identifierStart.Unit);
@@ -1248,7 +1248,7 @@ namespace ICSharpCode.NRefactory.CSharp.Completion
 							csResolver = GetState();
 						}
 						// add attribute properties.
-						if (n.Parent is ICSharpCode.NRefactory.CSharp.Attribute) {
+						if (n.Parent is IUnityCode.NRefactory.CSharp.Attribute) {
 							var rr = ResolveExpression(n.Parent);
 							if (rr != null)
 								AddAttributeProperties(contextList, rr.Result);

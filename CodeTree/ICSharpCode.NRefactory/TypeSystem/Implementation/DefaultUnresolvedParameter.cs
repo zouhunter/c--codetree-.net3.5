@@ -20,10 +20,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	/// <summary>
 	/// Default implementation for IUnresolvedParameter.

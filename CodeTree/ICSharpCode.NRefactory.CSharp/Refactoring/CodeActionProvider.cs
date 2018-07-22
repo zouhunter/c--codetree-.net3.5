@@ -27,7 +27,7 @@ using System;
 using System.Threading;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp.Refactoring
+namespace IUnityCode.NRefactory.CSharp.Refactoring
 {
 	public abstract class CodeActionProvider
 	{

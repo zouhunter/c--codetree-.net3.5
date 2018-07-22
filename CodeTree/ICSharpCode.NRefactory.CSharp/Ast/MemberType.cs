@@ -28,10 +28,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public class MemberType : AstType
 	{

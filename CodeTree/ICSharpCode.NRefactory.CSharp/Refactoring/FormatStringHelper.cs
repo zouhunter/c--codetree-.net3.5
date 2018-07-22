@@ -25,11 +25,11 @@
 // THE SOFTWARE.
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.CSharp.Resolver;
 using System.Linq;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	static class FormatStringHelper
 	{

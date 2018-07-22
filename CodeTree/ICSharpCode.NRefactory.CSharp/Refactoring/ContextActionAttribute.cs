@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	[AttributeUsage(AttributeTargets.Class)]
 	public class ContextActionAttribute : System.Attribute

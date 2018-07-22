@@ -22,7 +22,7 @@ using System.Reflection.Emit;
 
 using Mono.CompilerServices.SymbolWriter;
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
 	static class SymbolWriter
 	{

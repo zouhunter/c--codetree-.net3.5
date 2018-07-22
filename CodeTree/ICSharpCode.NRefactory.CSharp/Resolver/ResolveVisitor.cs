@@ -22,13 +22,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using ICSharpCode.NRefactory.CSharp.Analysis;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.CSharp.Analysis;
+using IUnityCode.NRefactory.CSharp.TypeSystem;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
 
-namespace ICSharpCode.NRefactory.CSharp.Resolver
+namespace IUnityCode.NRefactory.CSharp.Resolver
 {
 	/// <summary>
 	/// Traverses the DOM and resolves expressions.
@@ -3972,7 +3972,7 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 			return null;
 		}
 
-		ResolveResult IAstVisitor<ResolveResult>.VisitPatternPlaceholder(AstNode placeholder, ICSharpCode.NRefactory.PatternMatching.Pattern pattern)
+		ResolveResult IAstVisitor<ResolveResult>.VisitPatternPlaceholder(AstNode placeholder, IUnityCode.NRefactory.PatternMatching.Pattern pattern)
 		{
 			return null;
 		}

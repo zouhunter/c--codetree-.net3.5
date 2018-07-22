@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Semantics
+namespace IUnityCode.NRefactory.Semantics
 {
 	/// <summary>
 	/// Represents the result of a member invocation.

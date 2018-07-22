@@ -18,9 +18,9 @@
 
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	public class DefaultResolvedEvent : AbstractResolvedMember, IEvent
 	{

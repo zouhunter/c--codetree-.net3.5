@@ -18,9 +18,9 @@
 
 using System;
 using System.IO;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Documentation
+namespace IUnityCode.NRefactory.Documentation
 {
 	/// <summary>
 	/// Provides XML documentation for entities.

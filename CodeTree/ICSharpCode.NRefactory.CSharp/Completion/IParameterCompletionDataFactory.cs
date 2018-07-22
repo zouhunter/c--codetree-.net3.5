@@ -24,12 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.Completion;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Completion;
+using IUnityCode.NRefactory.CSharp.Resolver;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp.Completion
+namespace IUnityCode.NRefactory.CSharp.Completion
 {
 	public interface IParameterCompletionDataFactory
 	{

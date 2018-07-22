@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.Editor
+namespace IUnityCode.NRefactory.Editor
 {
 	/// <summary>
 	/// Document based on a string builder.

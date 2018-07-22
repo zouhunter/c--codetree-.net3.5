@@ -8,3 +8,6 @@ E:\Interact\cs-codetree-.net3.5\ICSharpCode.NRefactory.Demo\obj\x86\Debug\ICShar
 E:\Interact\cs-codetree-.net3.5\ICSharpCode.NRefactory.Demo\obj\x86\Debug\ICSharpCode.NRefactory.Demo.csproj.GenerateResource.Cache
 E:\Interact\cs-codetree-.net3.5\ICSharpCode.NRefactory.Demo\obj\x86\Debug\ICSharpCode.NRefactory.Demo.exe
 E:\Interact\cs-codetree-.net3.5\ICSharpCode.NRefactory.Demo\obj\x86\Debug\ICSharpCode.NRefactory.Demo.pdb
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\ICSharpCode.NRefactory.Demo\bin\Debug\ICSharpCode.NRefactory.Demo.exe.config
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\ICSharpCode.NRefactory.Demo\obj\x86\Debug\ICSharpCode.NRefactory.Demo.exe
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\ICSharpCode.NRefactory.Demo\obj\x86\Debug\ICSharpCode.NRefactory.Demo.pdb

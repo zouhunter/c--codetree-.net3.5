@@ -27,7 +27,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public enum GeneratedCodeMember
 	{

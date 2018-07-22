@@ -20,7 +20,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Extension methods for the syntax tree.

@@ -26,7 +26,7 @@
 using System;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	partial class FormattingVisitor
 	{

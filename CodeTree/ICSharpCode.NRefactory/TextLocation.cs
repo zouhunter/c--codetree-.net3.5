@@ -20,7 +20,7 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace ICSharpCode.NRefactory
+namespace IUnityCode.NRefactory
 {
 	/// <summary>
 	/// A line/column position.

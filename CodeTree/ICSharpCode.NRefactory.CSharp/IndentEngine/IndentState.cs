@@ -29,7 +29,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	#region IndentState
 

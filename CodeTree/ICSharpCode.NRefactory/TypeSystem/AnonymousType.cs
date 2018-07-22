@@ -19,10 +19,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	/// <summary>
 	/// Anonymous type.

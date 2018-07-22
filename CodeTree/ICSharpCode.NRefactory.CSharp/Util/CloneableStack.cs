@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	class CloneableStack<T> : IEnumerable<T>, ICollection<T>, ICloneable, IEquatable<CloneableStack<T>>
 	{

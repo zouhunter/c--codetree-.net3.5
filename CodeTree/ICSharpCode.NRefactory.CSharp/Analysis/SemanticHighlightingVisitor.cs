@@ -20,14 +20,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
 using System.Threading;
-using ICSharpCode.NRefactory.CSharp.Completion;
+using IUnityCode.NRefactory.CSharp.Completion;
 using System.Collections.ObjectModel;
 
-namespace ICSharpCode.NRefactory.CSharp.Analysis
+namespace IUnityCode.NRefactory.CSharp.Analysis
 {
 	/// <summary>
 	/// C# Semantic highlighter.
@@ -650,7 +650,7 @@ namespace ICSharpCode.NRefactory.CSharp.Analysis
 		{
 		}
 		
-		public override void VisitAttribute(ICSharpCode.NRefactory.CSharp.Attribute attribute)
+		public override void VisitAttribute(IUnityCode.NRefactory.CSharp.Attribute attribute)
 		{
 			ITypeDefinition attrDef = resolver.Resolve(attribute.Type, cancellationToken).Type.GetDefinition();
 			if (attrDef != null && IsInactiveConditional(attrDef.Attributes)) {

@@ -22,10 +22,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using ICSharpCode.NRefactory.Documentation;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Documentation;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	/// <summary>
 	/// Represents a SpecializedMember (a member on which type substitution has been performed).

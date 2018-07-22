@@ -17,7 +17,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.MonoCSharp {
+namespace IUnityCode.NRefactory.MonoCSharp {
 
 	//
 	// A common base class for Completing expressions, it

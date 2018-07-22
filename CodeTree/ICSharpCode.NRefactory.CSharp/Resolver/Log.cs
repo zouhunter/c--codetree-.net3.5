@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.CSharp.Resolver
+namespace IUnityCode.NRefactory.CSharp.Resolver
 {
 	/// <summary>
 	/// Resolver logging helper.

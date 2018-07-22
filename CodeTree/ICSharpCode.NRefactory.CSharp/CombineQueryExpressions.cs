@@ -25,10 +25,10 @@
 
 using System;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.PatternMatching;
+using IUnityCode.NRefactory.CSharp;
+using IUnityCode.NRefactory.PatternMatching;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Combines query expressions and removes transparent identifiers.

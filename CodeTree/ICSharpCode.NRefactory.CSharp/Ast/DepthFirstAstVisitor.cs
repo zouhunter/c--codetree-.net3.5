@@ -26,7 +26,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// AST visitor with a default implementation that visits all node depth-first.

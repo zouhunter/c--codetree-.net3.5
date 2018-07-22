@@ -19,10 +19,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.Semantics
+namespace IUnityCode.NRefactory.Semantics
 {
 	/// <summary>
 	/// Resolve result representing an array access.

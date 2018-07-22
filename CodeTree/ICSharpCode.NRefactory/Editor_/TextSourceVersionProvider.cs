@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.Editor
+namespace IUnityCode.NRefactory.Editor
 {
 	/// <summary>
 	/// Provides ITextSourceVersion instances.

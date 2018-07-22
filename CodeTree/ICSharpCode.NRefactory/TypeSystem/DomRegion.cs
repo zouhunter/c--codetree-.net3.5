@@ -19,7 +19,7 @@
 using System;
 using System.Globalization;
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	[Serializable]
 	public struct DomRegion : IEquatable<DomRegion>

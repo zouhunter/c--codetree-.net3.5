@@ -28,7 +28,7 @@ using System.Linq;
 using System.Text;
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// namespace Name { Members }

@@ -22,11 +22,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.CSharp.Resolver
+namespace IUnityCode.NRefactory.CSharp.Resolver
 {
 	/// <summary>
 	/// Contains logic that determines whether an implicit conversion exists between two types.

@@ -23,9 +23,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	/// <summary>
 	/// ParameterizedType represents an instance of a generic type.

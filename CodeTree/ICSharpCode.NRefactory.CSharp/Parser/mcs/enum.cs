@@ -22,7 +22,7 @@ using MetaType = System.Type;
 using System.Reflection;
 #endif
 
-namespace ICSharpCode.NRefactory.MonoCSharp {
+namespace IUnityCode.NRefactory.MonoCSharp {
 
 	public class EnumMember : Const
 	{

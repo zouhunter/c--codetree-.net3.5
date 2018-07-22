@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.TypeSystem;
-namespace ICSharpCode.NRefactory
+using IUnityCode.NRefactory.TypeSystem;
+namespace IUnityCode.NRefactory
 {
     public class Lazy<T>
     {
@@ -19,11 +19,11 @@ namespace System.Collections.Concurrent
 {
     public class ConcurrentDictionary<T, S> : Dictionary<T, S>
     {
-        ICSharpCode.NRefactory.Utils.ReferenceComparer Instance;
+        IUnityCode.NRefactory.Utils.ReferenceComparer Instance;
         public ConcurrentDictionary()
         {
         }
-        public ConcurrentDictionary(ICSharpCode.NRefactory.Utils.ReferenceComparer instence)
+        public ConcurrentDictionary(IUnityCode.NRefactory.Utils.ReferenceComparer instence)
         {
             this.Instance = instence;
         }
@@ -67,7 +67,7 @@ namespace System.Threading
     }
 }
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
     public static class LazyInitializer
     {

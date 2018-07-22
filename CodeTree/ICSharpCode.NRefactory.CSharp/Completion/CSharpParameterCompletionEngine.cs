@@ -24,16 +24,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.Completion;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Completion;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.CSharp.TypeSystem;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.CSharp.Completion
+namespace IUnityCode.NRefactory.CSharp.Completion
 {
 	public class CSharpParameterCompletionEngine : CSharpCompletionEngineBase
 	{
@@ -294,7 +294,7 @@ namespace ICSharpCode.NRefactory.CSharp.Completion
 						return factory.CreateConstructorProvider(document.GetOffset(invoke.Node.StartLocation), createType.Result.Type);
 					}
 					
-					if (invoke.Node is ICSharpCode.NRefactory.CSharp.Attribute) {
+					if (invoke.Node is IUnityCode.NRefactory.CSharp.Attribute) {
 						var attribute = ResolveExpression(invoke);
 						if (attribute == null || attribute.Result == null) {
 							return null;

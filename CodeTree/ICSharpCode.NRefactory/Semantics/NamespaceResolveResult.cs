@@ -18,9 +18,9 @@
 
 using System;
 using System.Globalization;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Semantics
+namespace IUnityCode.NRefactory.Semantics
 {
 	/// <summary>
 	/// Represents that an expression resolved to a namespace.

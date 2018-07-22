@@ -25,12 +25,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.CSharp;
+using IUnityCode.NRefactory.CSharp.Resolver;
 
-namespace ICSharpCode.NRefactory.Demo
+namespace IUnityCode.NRefactory.Demo
 {
 	/// <summary>
 	/// Description of MainForm.

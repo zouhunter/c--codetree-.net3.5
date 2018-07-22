@@ -24,7 +24,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.Serialization;
 
-namespace ICSharpCode.NRefactory.Utils
+namespace IUnityCode.NRefactory.Utils
 {
 	public class FastSerializer
 	{

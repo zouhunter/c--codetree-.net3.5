@@ -19,14 +19,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Analysis;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.CSharp.Analysis;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.CSharp.TypeSystem.ConstantValues
+namespace IUnityCode.NRefactory.CSharp.TypeSystem.ConstantValues
 {
 	// Contains representations for constant C# expressions.
 	// We use these instead of storing the full AST to reduce the memory usage.

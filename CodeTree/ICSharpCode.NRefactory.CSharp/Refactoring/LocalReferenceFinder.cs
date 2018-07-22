@@ -26,13 +26,13 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Utils;
 using System.Diagnostics;
 
-namespace ICSharpCode.NRefactory.CSharp.Refactoring
+namespace IUnityCode.NRefactory.CSharp.Refactoring
 {
 
 	/// <summary>

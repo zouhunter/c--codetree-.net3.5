@@ -25,11 +25,11 @@
 // THE SOFTWARE.
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp;
 
-namespace ICSharpCode.NRefactory.PatternMatching
+namespace IUnityCode.NRefactory.PatternMatching
 {
 
 

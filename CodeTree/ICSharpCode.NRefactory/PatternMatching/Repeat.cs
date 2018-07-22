@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace ICSharpCode.NRefactory.PatternMatching
+namespace IUnityCode.NRefactory.PatternMatching
 {
 	/// <summary>
 	/// Represents an optional node.

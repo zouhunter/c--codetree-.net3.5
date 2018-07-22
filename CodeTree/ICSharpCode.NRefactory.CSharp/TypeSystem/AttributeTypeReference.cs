@@ -22,11 +22,11 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
 
-namespace ICSharpCode.NRefactory.CSharp.TypeSystem
+namespace IUnityCode.NRefactory.CSharp.TypeSystem
 {
 	/// <summary>
 	/// Type reference used within an attribute.

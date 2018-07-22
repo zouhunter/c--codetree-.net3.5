@@ -26,7 +26,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 #endif
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
 	//
 	// This is an user operator expression, automatically created during

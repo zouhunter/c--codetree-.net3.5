@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp;
+using IUnityCode.NRefactory.CSharp;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	class InsertSpecialsDecorator : DecoratingTokenWriter
 	{

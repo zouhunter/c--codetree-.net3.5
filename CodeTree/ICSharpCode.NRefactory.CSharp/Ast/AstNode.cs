@@ -31,11 +31,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
-	public abstract class AstNode : AbstractAnnotatable, ICSharpCode.NRefactory.TypeSystem.IFreezable, PatternMatching.INode, ICloneable
+	public abstract class AstNode : AbstractAnnotatable, IUnityCode.NRefactory.TypeSystem.IFreezable, PatternMatching.INode, ICloneable
 	{
 		// the Root role must be available when creating the null nodes, so we can't put it in the Roles class
 		internal static readonly Role<AstNode> RootRole = new Role<AstNode> ("Root");
@@ -206,11 +206,11 @@ namespace ICSharpCode.NRefactory.CSharp
 		/// The file name of the region is set based on the parent SyntaxTree's file name.
 		/// If this node is not connected to a whole compilation, the file name will be null.
 		/// </summary>
-		public ICSharpCode.NRefactory.TypeSystem.DomRegion GetRegion()
+		public IUnityCode.NRefactory.TypeSystem.DomRegion GetRegion()
 		{
 			var syntaxTree = (this.Ancestors.LastOrDefault() ?? this) as SyntaxTree;
 			string fileName = (syntaxTree != null ? syntaxTree.FileName : null);
-			return new ICSharpCode.NRefactory.TypeSystem.DomRegion(fileName, this.StartLocation, this.EndLocation);
+			return new IUnityCode.NRefactory.TypeSystem.DomRegion(fileName, this.StartLocation, this.EndLocation);
 		}
 		
 		public AstNode Parent {

@@ -17,11 +17,11 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.CSharp.TypeSystem
+namespace IUnityCode.NRefactory.CSharp.TypeSystem
 {
 	[Serializable, FastSerializerVersion(TypeSystemConvertVisitor.version)]
 	public class CSharpUnresolvedTypeDefinition : DefaultUnresolvedTypeDefinition

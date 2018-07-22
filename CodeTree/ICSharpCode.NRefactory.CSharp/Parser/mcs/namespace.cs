@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Mono.CompilerServices.SymbolWriter;
 
-namespace ICSharpCode.NRefactory.MonoCSharp {
+namespace IUnityCode.NRefactory.MonoCSharp {
 
 	public class RootNamespace : Namespace {
 

@@ -21,14 +21,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.CSharp.TypeSystem;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.CSharp.Analysis
+namespace IUnityCode.NRefactory.CSharp.Analysis
 {
 	/// <summary>
 	/// Represents a node in the control flow graph of a C# method.

@@ -18,9 +18,9 @@
 
 using System;
 using System.Linq;
-using ICSharpCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.Semantics;
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	/// <summary>
 	/// Helper methods for COM.

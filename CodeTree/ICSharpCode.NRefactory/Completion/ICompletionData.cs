@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.Completion
+namespace IUnityCode.NRefactory.Completion
 {
 	public interface ICompletionData
 	{

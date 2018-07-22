@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System;
 
-namespace ICSharpCode.NRefactory
+namespace IUnityCode.NRefactory
 {
 	public enum UnicodeNewline {
 		Unknown,

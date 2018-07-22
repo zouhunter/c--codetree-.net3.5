@@ -18,9 +18,9 @@
 
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Analysis
+namespace IUnityCode.NRefactory.Analysis
 {
 	public sealed class TypeGraphNode
 	{

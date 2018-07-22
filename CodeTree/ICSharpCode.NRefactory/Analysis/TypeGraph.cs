@@ -18,9 +18,9 @@
 
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Analysis
+namespace IUnityCode.NRefactory.Analysis
 {
 	/// <summary>
 	/// A graph where type definitions are nodes; and edges are given by inheritance.

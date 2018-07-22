@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.Refactoring;
+using IUnityCode.NRefactory.Refactoring;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	[AttributeUsage(AttributeTargets.Class)]
 	public class IssueDescriptionAttribute : System.Attribute

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory", "CodeTree\ICSharpCode.NRefactory\ICSharpCode.NRefactory.csproj", "{3B2A5653-EC97-4001-BB9B-D90F1AF2C371}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUnityCode.NRefactory", "CodeTree\ICSharpCode.NRefactory\IUnityCode.NRefactory.csproj", "{3B2A5653-EC97-4001-BB9B-D90F1AF2C371}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory.CSharp", "CodeTree\ICSharpCode.NRefactory.CSharp\ICSharpCode.NRefactory.CSharp.csproj", "{53DCA265-3C3C-42F9-B647-F72BA678122B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUnityCode.NRefactory.CSharp", "CodeTree\ICSharpCode.NRefactory.CSharp\IUnityCode.NRefactory.CSharp.csproj", "{53DCA265-3C3C-42F9-B647-F72BA678122B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory.Demo", "ICSharpCode.NRefactory.Demo\ICSharpCode.NRefactory.Demo.csproj", "{9C19E629-C93E-4ACB-9A4B-13072B5AEF9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUnityCode.NRefactory.Demo", "ICSharpCode.NRefactory.Demo\IUnityCode.NRefactory.Demo.csproj", "{9C19E629-C93E-4ACB-9A4B-13072B5AEF9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.Editor
+namespace IUnityCode.NRefactory.Editor
 {
 	/// <summary>
 	/// Read-only implementation of <see cref="IDocument"/>.

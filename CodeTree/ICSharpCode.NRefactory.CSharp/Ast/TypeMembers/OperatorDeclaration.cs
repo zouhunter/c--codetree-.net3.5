@@ -26,9 +26,9 @@
 
 using System;
 using System.ComponentModel;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public enum OperatorType
 	{
@@ -36,39 +36,39 @@ namespace ICSharpCode.NRefactory.CSharp
 		// due to the casts used in OperatorDeclaration.
 		
 		// Unary operators
-		LogicalNot = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.LogicalNot,
-		OnesComplement = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.OnesComplement,
-		Increment = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Increment,
-		Decrement = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Decrement,
-		True = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.True,
-		False = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.False,
+		LogicalNot = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.LogicalNot,
+		OnesComplement = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.OnesComplement,
+		Increment = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Increment,
+		Decrement = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Decrement,
+		True = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.True,
+		False = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.False,
 
 		// Unary and Binary operators
-		Addition = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Addition,
-		Subtraction = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Subtraction,
+		Addition = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Addition,
+		Subtraction = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Subtraction,
 
-		UnaryPlus = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.UnaryPlus,
-		UnaryNegation = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.UnaryNegation,
+		UnaryPlus = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.UnaryPlus,
+		UnaryNegation = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.UnaryNegation,
 		
 		// Binary operators
-		Multiply = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Multiply,
-		Division = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Division,
-		Modulus = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Modulus,
-		BitwiseAnd = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.BitwiseAnd,
-		BitwiseOr = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.BitwiseOr,
-		ExclusiveOr = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.ExclusiveOr,
-		LeftShift = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.LeftShift,
-		RightShift = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.RightShift,
-		Equality = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Equality,
-		Inequality = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Inequality,
-		GreaterThan = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.GreaterThan,
-		LessThan = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.LessThan,
-		GreaterThanOrEqual = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.GreaterThanOrEqual,
-		LessThanOrEqual = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.LessThanOrEqual,
+		Multiply = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Multiply,
+		Division = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Division,
+		Modulus = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Modulus,
+		BitwiseAnd = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.BitwiseAnd,
+		BitwiseOr = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.BitwiseOr,
+		ExclusiveOr = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.ExclusiveOr,
+		LeftShift = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.LeftShift,
+		RightShift = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.RightShift,
+		Equality = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Equality,
+		Inequality = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Inequality,
+		GreaterThan = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.GreaterThan,
+		LessThan = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.LessThan,
+		GreaterThanOrEqual = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.GreaterThanOrEqual,
+		LessThanOrEqual = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.LessThanOrEqual,
 
 		// Implicit and Explicit
-		Implicit = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Implicit,
-		Explicit = ICSharpCode.NRefactory.MonoCSharp.Operator.OpType.Explicit
+		Implicit = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Implicit,
+		Explicit = IUnityCode.NRefactory.MonoCSharp.Operator.OpType.Explicit
 	}
 	
 	public class OperatorDeclaration : EntityDeclaration
@@ -150,7 +150,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		/// </summary>
 		public static OperatorType? GetOperatorType(string methodName)
 		{
-			return (OperatorType?)ICSharpCode.NRefactory.MonoCSharp.Operator.GetType(methodName);
+			return (OperatorType?)IUnityCode.NRefactory.MonoCSharp.Operator.GetType(methodName);
 		}
 		
 		public static TokenRole GetRole (OperatorType type)
@@ -220,7 +220,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		/// </summary>
 		public static string GetName (OperatorType type)
 		{
-			return ICSharpCode.NRefactory.MonoCSharp.Operator.GetMetadataName ((ICSharpCode.NRefactory.MonoCSharp.Operator.OpType)type);
+			return IUnityCode.NRefactory.MonoCSharp.Operator.GetMetadataName ((IUnityCode.NRefactory.MonoCSharp.Operator.OpType)type);
 		}
 		
 		/// <summary>
@@ -228,7 +228,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		/// </summary>
 		public static string GetToken (OperatorType type)
 		{
-			return ICSharpCode.NRefactory.MonoCSharp.Operator.GetName ((ICSharpCode.NRefactory.MonoCSharp.Operator.OpType)type);
+			return IUnityCode.NRefactory.MonoCSharp.Operator.GetName ((IUnityCode.NRefactory.MonoCSharp.Operator.OpType)type);
 		}
 		
 		public override void AcceptVisitor (IAstVisitor visitor)

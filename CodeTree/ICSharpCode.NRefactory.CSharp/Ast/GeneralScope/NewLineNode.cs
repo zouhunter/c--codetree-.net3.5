@@ -1,5 +1,5 @@
 using System;
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 
 	/// <summary>
@@ -82,7 +82,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			return visitor.VisitNewLine (this, data);
 		}
 		
-		protected internal override bool DoMatch(AstNode other, ICSharpCode.NRefactory.PatternMatching.Match match)
+		protected internal override bool DoMatch(AstNode other, IUnityCode.NRefactory.PatternMatching.Match match)
 		{
 			return other is NewLineNode;
 		}

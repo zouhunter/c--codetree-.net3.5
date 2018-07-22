@@ -27,13 +27,13 @@
 using System;
 using System.Text;
 using System.Linq;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.TypeSystem;
 using System.Threading;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	[Obsolete("This class was replaced by CSharpFormatter.")]
 	public class AstFormattingVisitor {}

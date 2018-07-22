@@ -25,12 +25,12 @@
 // THE SOFTWARE.
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.Completion;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Completion;
+using IUnityCode.NRefactory.TypeSystem;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.CSharp.Resolver;
 
-namespace ICSharpCode.NRefactory.CSharp.Completion
+namespace IUnityCode.NRefactory.CSharp.Completion
 {
 	public class CompletionDataWrapper
 	{

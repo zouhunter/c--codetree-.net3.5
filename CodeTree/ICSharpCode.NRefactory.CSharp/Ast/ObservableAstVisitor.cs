@@ -26,7 +26,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public class ObservableAstVisitor : IAstVisitor
 	{

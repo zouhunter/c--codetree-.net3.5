@@ -28,7 +28,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	[Flags]
 	public enum Modifiers

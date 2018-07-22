@@ -19,7 +19,7 @@ using System.Text;
 using System.Xml;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
 	//
 	// Implements XML documentation generation.

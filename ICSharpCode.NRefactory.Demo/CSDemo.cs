@@ -28,13 +28,13 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.CSharp;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
 
-namespace ICSharpCode.NRefactory.Demo
+namespace IUnityCode.NRefactory.Demo
 {
 	/// <summary>
 	/// Description of CSDemo.
@@ -184,7 +184,7 @@ namespace ICSharpCode.NRefactory.Demo
 //					typeof(System.Xml.XmlDocument).Assembly, // System.Xml.dll
 //					typeof(System.Drawing.Bitmap).Assembly, // System.Drawing.dll
 //					typeof(Form).Assembly, // System.Windows.Forms.dll
-					typeof(ICSharpCode.NRefactory.TypeSystem.IProjectContent).Assembly,
+					typeof(IUnityCode.NRefactory.TypeSystem.IProjectContent).Assembly,
 				};
 				IUnresolvedAssembly[] projectContents = new IUnresolvedAssembly[assemblies.Length];
 				Stopwatch total = Stopwatch.StartNew();

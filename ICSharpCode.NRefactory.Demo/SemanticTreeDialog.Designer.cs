@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace ICSharpCode.NRefactory.Demo
+namespace IUnityCode.NRefactory.Demo
 {
 	partial class SemanticTreeDialog
 	{

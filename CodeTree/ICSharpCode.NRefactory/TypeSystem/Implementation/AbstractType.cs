@@ -21,7 +21,7 @@ using System.Collections.Generic;
 //
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	/// <summary>
 	/// Default implementation for IType interface.

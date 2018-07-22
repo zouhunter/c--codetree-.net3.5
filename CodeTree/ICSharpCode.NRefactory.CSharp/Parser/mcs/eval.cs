@@ -21,7 +21,7 @@ using System.IO;
 using System.Text;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
 
 	/// <summary>

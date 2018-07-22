@@ -17,9 +17,9 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Documentation
+namespace IUnityCode.NRefactory.Documentation
 {
 	[Serializable]
 	class IdStringMemberReference : IMemberReference

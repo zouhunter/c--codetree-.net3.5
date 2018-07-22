@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ICSharpCode.NRefactory.PatternMatching
+namespace IUnityCode.NRefactory.PatternMatching
 {
 	/// <summary>
 	/// Container for the backtracking info.

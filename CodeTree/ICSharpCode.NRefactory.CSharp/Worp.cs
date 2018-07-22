@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using IUnityCode.NRefactory.CSharp.Refactoring;
 
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
     public class HeshSet<T> : ISet<T>
     {

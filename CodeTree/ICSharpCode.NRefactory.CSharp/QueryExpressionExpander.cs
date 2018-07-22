@@ -22,9 +22,9 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.PatternMatching;
+using IUnityCode.NRefactory.PatternMatching;
 
-namespace ICSharpCode.NRefactory.CSharp {
+namespace IUnityCode.NRefactory.CSharp {
 	public class QueryExpressionExpansionResult {
 		public AstNode AstNode { get; private set; }
 

@@ -18,9 +18,9 @@
 
 using System;
 using System.Linq;
-using ICSharpCode.NRefactory.PatternMatching;
+using IUnityCode.NRefactory.PatternMatching;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Matches identifier expressions that have the same identifier as the referenced variable/type definition/method definition.

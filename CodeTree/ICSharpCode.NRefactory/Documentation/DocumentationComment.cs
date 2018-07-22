@@ -17,10 +17,10 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Documentation
+namespace IUnityCode.NRefactory.Documentation
 {
 	/// <summary>
 	/// Represents a documentation comment.

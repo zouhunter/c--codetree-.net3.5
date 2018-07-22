@@ -26,7 +26,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Expression as TypeReference

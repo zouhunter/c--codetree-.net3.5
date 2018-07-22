@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 using System;
 using System.Linq;
-using ICSharpCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Editor;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	partial class FormattingVisitor : DepthFirstAstVisitor
 	{

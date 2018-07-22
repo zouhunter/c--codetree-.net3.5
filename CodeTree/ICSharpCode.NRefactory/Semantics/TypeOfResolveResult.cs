@@ -17,9 +17,9 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.Semantics
+namespace IUnityCode.NRefactory.Semantics
 {
 	/// <summary>
 	/// Represents the 'typeof'.

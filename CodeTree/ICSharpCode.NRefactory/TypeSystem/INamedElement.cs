@@ -19,7 +19,7 @@
 using System;
 
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	public interface INamedElement
 	{

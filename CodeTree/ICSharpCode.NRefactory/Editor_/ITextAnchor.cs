@@ -18,7 +18,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.Editor
+namespace IUnityCode.NRefactory.Editor
 {
 	/// <summary>
 	/// The TextAnchor class references an offset (a position between two characters).

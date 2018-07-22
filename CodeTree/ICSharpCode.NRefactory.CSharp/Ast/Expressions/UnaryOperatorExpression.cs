@@ -27,7 +27,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Operator Expression

@@ -16,3 +16,10 @@ E:\Interact\cs-codetree-.net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug
 E:\Interact\cs-codetree-.net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.CSharp.dll
 E:\Interact\cs-codetree-.net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.CSharp.pdb
 E:\Interact\cs-codetree-.net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.CSharp.xml
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.CSharp.dll
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.CSharp.pdb
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\CodeTree\bin\Debug\ICSharpCode.NRefactory.CSharp.xml
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.dll
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.xml
+C:\Users\zouhunter\Desktop\csharp-NRefactory-.Net3.5\CodeTree\ICSharpCode.NRefactory.CSharp\obj\Debug\ICSharpCode.NRefactory.CSharp.pdb

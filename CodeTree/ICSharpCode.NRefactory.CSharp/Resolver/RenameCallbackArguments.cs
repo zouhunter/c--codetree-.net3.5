@@ -18,7 +18,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp.Resolver
+namespace IUnityCode.NRefactory.CSharp.Resolver
 {
 	/// <summary>
 	/// Arguments for the callback of <see cref="FindReferences.RenameReferencesInFile"/>.

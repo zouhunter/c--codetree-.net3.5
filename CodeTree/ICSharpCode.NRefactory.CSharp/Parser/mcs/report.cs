@@ -14,7 +14,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace ICSharpCode.NRefactory.MonoCSharp {
+namespace IUnityCode.NRefactory.MonoCSharp {
 
 	//
 	// Errors and warnings manager

@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	public sealed class DummyTypeParameter : AbstractType, ITypeParameter
 	{

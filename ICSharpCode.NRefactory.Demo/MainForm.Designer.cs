@@ -16,7 +16,7 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-namespace ICSharpCode.NRefactory.Demo
+namespace IUnityCode.NRefactory.Demo
 {
 	partial class MainForm
 	{
@@ -48,7 +48,7 @@ namespace ICSharpCode.NRefactory.Demo
 		{
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.csDemo1 = new ICSharpCode.NRefactory.Demo.CSDemo();
+            this.csDemo1 = new IUnityCode.NRefactory.Demo.CSDemo();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1.SuspendLayout();
@@ -121,7 +121,7 @@ namespace ICSharpCode.NRefactory.Demo
 
 		}
 		private System.Windows.Forms.TabPage tabPage2;
-		private ICSharpCode.NRefactory.Demo.CSDemo csDemo1;
+		private IUnityCode.NRefactory.Demo.CSDemo csDemo1;
 		private System.Windows.Forms.ToolStrip miniToolStrip;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabControl tabControl1;

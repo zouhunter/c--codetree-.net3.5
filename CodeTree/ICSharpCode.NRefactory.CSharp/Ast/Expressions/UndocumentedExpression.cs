@@ -26,7 +26,7 @@
 
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public enum UndocumentedExpressionType
 	{
@@ -54,14 +54,14 @@ namespace ICSharpCode.NRefactory.CSharp
 		public CSharpTokenNode UndocumentedToken {
 			get {
 				switch (UndocumentedExpressionType) {
-				case ICSharpCode.NRefactory.CSharp.UndocumentedExpressionType.ArgListAccess:
-				case ICSharpCode.NRefactory.CSharp.UndocumentedExpressionType.ArgList:
+				case IUnityCode.NRefactory.CSharp.UndocumentedExpressionType.ArgListAccess:
+				case IUnityCode.NRefactory.CSharp.UndocumentedExpressionType.ArgList:
 					return GetChildByRole (ArglistKeywordRole);
-				case ICSharpCode.NRefactory.CSharp.UndocumentedExpressionType.RefValue:
+				case IUnityCode.NRefactory.CSharp.UndocumentedExpressionType.RefValue:
 					return GetChildByRole (RefvalueKeywordRole);
-				case ICSharpCode.NRefactory.CSharp.UndocumentedExpressionType.RefType:
+				case IUnityCode.NRefactory.CSharp.UndocumentedExpressionType.RefType:
 					return GetChildByRole (ReftypeKeywordRole);
-				case ICSharpCode.NRefactory.CSharp.UndocumentedExpressionType.MakeRef:
+				case IUnityCode.NRefactory.CSharp.UndocumentedExpressionType.MakeRef:
 					return GetChildByRole (MakerefKeywordRole);
 				}
 				return CSharpTokenNode.Null;

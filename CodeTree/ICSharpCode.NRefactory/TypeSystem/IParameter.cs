@@ -18,7 +18,7 @@
 
 using System;
 using System.Collections.Generic;
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	public interface IUnresolvedParameter
 	{

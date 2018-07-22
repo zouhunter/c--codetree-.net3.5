@@ -19,9 +19,9 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	/// <summary>
 	/// Default implementation of ISolutionSnapshot.

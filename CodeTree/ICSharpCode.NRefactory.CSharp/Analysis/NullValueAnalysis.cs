@@ -31,15 +31,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Text;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
-using ICSharpCode.NRefactory.PatternMatching;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.Refactoring;
+using IUnityCode.NRefactory.PatternMatching;
+using IUnityCode.NRefactory.CSharp;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.CSharp.Analysis
+namespace IUnityCode.NRefactory.CSharp.Analysis
 {
 	public class NullValueAnalysis
 	{

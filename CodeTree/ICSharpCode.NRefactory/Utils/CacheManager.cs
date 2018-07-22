@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Threading;
 
 
-namespace ICSharpCode.NRefactory.Utils
+namespace IUnityCode.NRefactory.Utils
 {
     /// <summary>
     /// Allows caching values for a specific compilation.

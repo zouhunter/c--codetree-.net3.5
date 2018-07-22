@@ -18,7 +18,7 @@ using System.Globalization;
 using System.Diagnostics;
 using System.Collections;
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
 	//
 	// This class has to be used by parser only, it reuses token

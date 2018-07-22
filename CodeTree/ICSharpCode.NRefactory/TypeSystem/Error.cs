@@ -26,7 +26,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.TypeSystem
+namespace IUnityCode.NRefactory.TypeSystem
 {
 	/// <summary>
 	/// Enum that describes the type of an error.
@@ -64,7 +64,7 @@ namespace ICSharpCode.NRefactory.TypeSystem
 		public DomRegion Region { get { return region; } }
 		
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ICSharpCode.NRefactory.TypeSystem.Error"/> class.
+		/// Initializes a new instance of the <see cref="IUnityCode.NRefactory.TypeSystem.Error"/> class.
 		/// </summary>
 		/// <param name='errorType'>
 		/// The error type.
@@ -83,7 +83,7 @@ namespace ICSharpCode.NRefactory.TypeSystem
 		}
 		
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ICSharpCode.NRefactory.TypeSystem.Error"/> class.
+		/// Initializes a new instance of the <see cref="IUnityCode.NRefactory.TypeSystem.Error"/> class.
 		/// </summary>
 		/// <param name='errorType'>
 		/// The error type.
@@ -102,7 +102,7 @@ namespace ICSharpCode.NRefactory.TypeSystem
 		}
 		
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ICSharpCode.NRefactory.TypeSystem.Error"/> class.
+		/// Initializes a new instance of the <see cref="IUnityCode.NRefactory.TypeSystem.Error"/> class.
 		/// </summary>
 		/// <param name='errorType'>
 		/// The error type.
@@ -121,7 +121,7 @@ namespace ICSharpCode.NRefactory.TypeSystem
 		}
 		
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ICSharpCode.NRefactory.TypeSystem.Error"/> class.
+		/// Initializes a new instance of the <see cref="IUnityCode.NRefactory.TypeSystem.Error"/> class.
 		/// </summary>
 		/// <param name='errorType'>
 		/// The error type.

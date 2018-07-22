@@ -24,12 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 using System.Collections.Generic;
 using System.Linq;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// An invocated extension method hides the extension parameter in its parameter list.
@@ -329,7 +329,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			}
 		}
 
-		public ICSharpCode.NRefactory.Documentation.DocumentationComment Documentation {
+		public IUnityCode.NRefactory.Documentation.DocumentationComment Documentation {
 			get {
 				return baseMethod.Documentation;
 			}

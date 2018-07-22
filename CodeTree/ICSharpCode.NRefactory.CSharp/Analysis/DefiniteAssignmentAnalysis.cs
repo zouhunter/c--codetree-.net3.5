@@ -22,13 +22,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.CSharp.Analysis
+namespace IUnityCode.NRefactory.CSharp.Analysis
 {
 	/// <summary>
 	/// Represents the definite assignment status of a variable at a specific location.

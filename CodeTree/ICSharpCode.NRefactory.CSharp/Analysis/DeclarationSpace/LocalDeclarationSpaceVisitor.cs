@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp.Analysis
+namespace IUnityCode.NRefactory.CSharp.Analysis
 {
 	public class LocalDeclarationSpaceVisitor : DepthFirstAstVisitor
 	{

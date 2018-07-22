@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.MonoCSharp {
+namespace IUnityCode.NRefactory.MonoCSharp {
 
 	[Flags]
 	public enum MemberKind
@@ -93,7 +93,7 @@ namespace ICSharpCode.NRefactory.MonoCSharp {
 
 		public static MemberFilter Constructor (AParametersCollection param)
 		{
-			return new MemberFilter (ICSharpCode.NRefactory.MonoCSharp.Constructor.ConstructorName, 0, MemberKind.Constructor, param, null);
+			return new MemberFilter (IUnityCode.NRefactory.MonoCSharp.Constructor.ConstructorName, 0, MemberKind.Constructor, param, null);
 		}
 
 		public static MemberFilter Property (string name, TypeSpec type)

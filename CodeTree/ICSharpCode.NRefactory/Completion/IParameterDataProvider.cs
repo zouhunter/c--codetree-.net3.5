@@ -24,9 +24,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Editor;
 
-namespace ICSharpCode.NRefactory.Completion
+namespace IUnityCode.NRefactory.Completion
 {
 	/// <summary>
 	/// Provides intellisense information for a collection of parametrized members.

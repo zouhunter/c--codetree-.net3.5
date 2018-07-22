@@ -25,11 +25,11 @@
 // THE SOFTWARE.
 
 using System.Linq;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp.Refactoring
+namespace IUnityCode.NRefactory.CSharp.Refactoring
 {
 	public class LambdaHelper
 	{

@@ -25,13 +25,13 @@
 // THE SOFTWARE.
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.CSharp.TypeSystem;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.CSharp.Resolver;
 
-namespace ICSharpCode.NRefactory.CSharp.Completion
+namespace IUnityCode.NRefactory.CSharp.Completion
 {
 	public interface ICompletionContextProvider
 	{

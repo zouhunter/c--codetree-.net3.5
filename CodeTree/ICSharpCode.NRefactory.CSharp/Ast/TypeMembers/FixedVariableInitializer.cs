@@ -26,7 +26,7 @@
 
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Name [ CountExpression ]
@@ -95,7 +95,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			return visitor.VisitFixedVariableInitializer (this, data);
 		}
 		
-		protected internal override bool DoMatch (AstNode other, ICSharpCode.NRefactory.PatternMatching.Match match)
+		protected internal override bool DoMatch (AstNode other, IUnityCode.NRefactory.PatternMatching.Match match)
 		{
 			var o = other as FixedVariableInitializer;
 			return o != null && MatchString (this.Name, o.Name) && this.CountExpression.DoMatch (o.CountExpression, match);

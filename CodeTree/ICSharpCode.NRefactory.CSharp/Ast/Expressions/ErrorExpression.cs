@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	[Obsolete("This class is obsolete. Remove all referencing code.")]
 	public class EmptyExpression : AstNode
@@ -47,7 +47,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			throw new NotImplementedException();
 		}
 
-		protected internal override bool DoMatch(AstNode other, ICSharpCode.NRefactory.PatternMatching.Match match)
+		protected internal override bool DoMatch(AstNode other, IUnityCode.NRefactory.PatternMatching.Match match)
 		{
 			throw new NotImplementedException();
 		}

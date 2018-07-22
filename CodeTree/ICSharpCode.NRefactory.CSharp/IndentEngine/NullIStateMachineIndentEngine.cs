@@ -25,17 +25,17 @@
 // THE SOFTWARE.
 using System;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// An empty IStateMachineIndentEngine implementation that does nothing.
 	/// </summary>
 	public sealed class NullIStateMachineIndentEngine : IStateMachineIndentEngine
 	{
-		readonly ICSharpCode.NRefactory.Editor.IDocument document;
+		readonly IUnityCode.NRefactory.Editor.IDocument document;
 		int offset;
 
-		public NullIStateMachineIndentEngine(ICSharpCode.NRefactory.Editor.IDocument document)
+		public NullIStateMachineIndentEngine(IUnityCode.NRefactory.Editor.IDocument document)
 		{
 			if (document == null)
 				throw new ArgumentNullException("document");
@@ -154,7 +154,7 @@ namespace ICSharpCode.NRefactory.CSharp
 			return Clone();
 		}
 
-		ICSharpCode.NRefactory.Editor.IDocument IDocumentIndentEngine.Document {
+		IUnityCode.NRefactory.Editor.IDocument IDocumentIndentEngine.Document {
 			get {
 				return document;
 			}

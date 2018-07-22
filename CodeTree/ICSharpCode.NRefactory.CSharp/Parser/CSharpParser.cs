@@ -27,11 +27,11 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.MonoCSharp;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.MonoCSharp;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
     public class CSharpParser
     {
@@ -241,7 +241,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            AstType ConvertToType(ICSharpCode.NRefactory.MonoCSharp.Expression typeName)
+            AstType ConvertToType(IUnityCode.NRefactory.MonoCSharp.Expression typeName)
             {
                 if (typeName == null) // may happen in typeof(Generic<,,,,>)
                     return new SimpleType();
@@ -338,7 +338,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return new SimpleType("unknown");
             }
 
-            IEnumerable<Attribute> GetAttributes(IEnumerable<ICSharpCode.NRefactory.MonoCSharp.Attribute> optAttributes)
+            IEnumerable<Attribute> GetAttributes(IEnumerable<IUnityCode.NRefactory.MonoCSharp.Attribute> optAttributes)
             {
                 if (optAttributes == null)
                     yield break;
@@ -405,7 +405,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 }
             }
 
-            AttributeSection ConvertAttributeSection(IEnumerable<ICSharpCode.NRefactory.MonoCSharp.Attribute> optAttributes)
+            AttributeSection ConvertAttributeSection(IEnumerable<IUnityCode.NRefactory.MonoCSharp.Attribute> optAttributes)
             {
                 if (optAttributes == null)
                     return null;
@@ -762,7 +762,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 AddType(newType);
             }
 
-            public override void Visit(ICSharpCode.NRefactory.MonoCSharp.Delegate d)
+            public override void Visit(IUnityCode.NRefactory.MonoCSharp.Delegate d)
             {
                 var newDelegate = new DelegateDeclaration();
                 var location = LocationsBag.GetMemberLocation(d);
@@ -817,7 +817,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 }
             }
 
-            public override void Visit(ICSharpCode.NRefactory.MonoCSharp.Enum e)
+            public override void Visit(IUnityCode.NRefactory.MonoCSharp.Enum e)
             {
                 var newType = new TypeDeclaration();
                 newType.ClassType = ClassType.Enum;
@@ -1247,27 +1247,27 @@ namespace ICSharpCode.NRefactory.CSharp
                 typeStack.Peek().AddChild(newMethod, Roles.TypeMemberRole);
             }
 
-            static readonly Dictionary<ICSharpCode.NRefactory.MonoCSharp.Modifiers, Modifiers> modifierTable = new Dictionary<ICSharpCode.NRefactory.MonoCSharp.Modifiers, Modifiers>();
+            static readonly Dictionary<IUnityCode.NRefactory.MonoCSharp.Modifiers, Modifiers> modifierTable = new Dictionary<IUnityCode.NRefactory.MonoCSharp.Modifiers, Modifiers>();
             static readonly string[] keywordTable;
 
             static ConversionVisitor()
             {
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.NEW] = Modifiers.New;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.PUBLIC] = Modifiers.Public;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.PROTECTED] = Modifiers.Protected;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.PRIVATE] = Modifiers.Private;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.INTERNAL] = Modifiers.Internal;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.ABSTRACT] = Modifiers.Abstract;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.VIRTUAL] = Modifiers.Virtual;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.SEALED] = Modifiers.Sealed;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.STATIC] = Modifiers.Static;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.OVERRIDE] = Modifiers.Override;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.READONLY] = Modifiers.Readonly;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.PARTIAL] = Modifiers.Partial;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.EXTERN] = Modifiers.Extern;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.VOLATILE] = Modifiers.Volatile;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.UNSAFE] = Modifiers.Unsafe;
-                modifierTable[ICSharpCode.NRefactory.MonoCSharp.Modifiers.ASYNC] = Modifiers.Async;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.NEW] = Modifiers.New;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.PUBLIC] = Modifiers.Public;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.PROTECTED] = Modifiers.Protected;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.PRIVATE] = Modifiers.Private;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.INTERNAL] = Modifiers.Internal;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.ABSTRACT] = Modifiers.Abstract;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.VIRTUAL] = Modifiers.Virtual;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.SEALED] = Modifiers.Sealed;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.STATIC] = Modifiers.Static;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.OVERRIDE] = Modifiers.Override;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.READONLY] = Modifiers.Readonly;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.PARTIAL] = Modifiers.Partial;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.EXTERN] = Modifiers.Extern;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.VOLATILE] = Modifiers.Volatile;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.UNSAFE] = Modifiers.Unsafe;
+                modifierTable[IUnityCode.NRefactory.MonoCSharp.Modifiers.ASYNC] = Modifiers.Async;
 
                 keywordTable = new string[255];
                 for (int i = 0; i < keywordTable.Length; i++)
@@ -1595,7 +1595,7 @@ namespace ICSharpCode.NRefactory.CSharp
 
             #region Statements
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Statement stmt)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Statement stmt)
             {
                 Console.WriteLine("unknown statement:" + stmt);
                 return null;
@@ -1697,14 +1697,14 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.EmptyStatement emptyStatement)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.EmptyStatement emptyStatement)
             {
                 var result = new EmptyStatement();
                 result.Location = Convert(emptyStatement.loc);
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.ErrorExpression errorExpression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.ErrorExpression errorExpression)
             {
                 return new ErrorExpression(Convert(errorExpression.Location));
             }
@@ -1782,7 +1782,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            void AddStatementOrList(ForStatement forStatement, ICSharpCode.NRefactory.MonoCSharp.Statement init, Role<Statement> role)
+            void AddStatementOrList(ForStatement forStatement, IUnityCode.NRefactory.MonoCSharp.Statement init, Role<Statement> role)
             {
                 if (init == null)
                     return;
@@ -1794,7 +1794,7 @@ namespace ICSharpCode.NRefactory.CSharp
                         forStatement.AddChild((Statement)stmt.Accept(this), role);
                     }
                 }
-                else if (init is ICSharpCode.NRefactory.MonoCSharp.EmptyStatement)
+                else if (init is IUnityCode.NRefactory.MonoCSharp.EmptyStatement)
                 {
 
                 }
@@ -1982,7 +1982,7 @@ namespace ICSharpCode.NRefactory.CSharp
             public UsingStatement CreateUsingStatement(Block blockStatement)
             {
                 var usingResult = new UsingStatement();
-                ICSharpCode.NRefactory.MonoCSharp.Statement cur = blockStatement.Statements[0];
+                IUnityCode.NRefactory.MonoCSharp.Statement cur = blockStatement.Statements[0];
                 var u = cur as Using;
                 if (u != null)
                 {
@@ -2042,7 +2042,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 {
                     return;
                 }
-                foreach (ICSharpCode.NRefactory.MonoCSharp.Statement stmt in blockStatement.Statements)
+                foreach (IUnityCode.NRefactory.MonoCSharp.Statement stmt in blockStatement.Statements)
                 {
                     if (stmt == null)
                         continue;
@@ -2420,7 +2420,7 @@ namespace ICSharpCode.NRefactory.CSharp
 
             #region Expression
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Expression expression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Expression expression)
             {
                 Console.WriteLine("Visit unknown expression:" + expression);
                 Console.WriteLine(Environment.StackTrace);
@@ -2515,7 +2515,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return booleanExpression.Expr.Accept(this);
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.ParenthesizedExpression parenthesizedExpression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.ParenthesizedExpression parenthesizedExpression)
             {
                 var result = new ParenthesizedExpression();
                 var location = LocationsBag.GetLocations(parenthesizedExpression);
@@ -2669,7 +2669,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.DefaultValueExpression defaultValueExpression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.DefaultValueExpression defaultValueExpression)
             {
                 var result = new DefaultValueExpression();
                 result.AddChild(new CSharpTokenNode(Convert(defaultValueExpression.Location), DefaultValueExpression.DefaultKeywordRole), DefaultValueExpression.DefaultKeywordRole);
@@ -2756,7 +2756,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Nullable.NullCoalescingOperator nullCoalescingOperator)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Nullable.NullCoalescingOperator nullCoalescingOperator)
             {
                 var result = new BinaryOperatorExpression();
                 result.Operator = BinaryOperatorType.NullCoalescing;
@@ -3588,7 +3588,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.AnonymousMethodExpression anonymousMethodExpression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.AnonymousMethodExpression anonymousMethodExpression)
             {
                 var result = new AnonymousMethodExpression();
                 var location = LocationsBag.GetLocations(anonymousMethodExpression);
@@ -3619,7 +3619,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.LambdaExpression lambdaExpression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.LambdaExpression lambdaExpression)
             {
                 var result = new LambdaExpression();
                 var location = LocationsBag.GetLocations(lambdaExpression);
@@ -3698,7 +3698,7 @@ namespace ICSharpCode.NRefactory.CSharp
 
             QueryOrderClause currentQueryOrderClause;
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.QueryExpression queryExpression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.QueryExpression queryExpression)
             {
                 var oldQueryOrderClause = currentQueryOrderClause;
                 try
@@ -3733,7 +3733,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 }
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.QueryStartClause queryExpression)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.QueryStartClause queryExpression)
             {
                 if (queryExpression.Expr == null)
                 {
@@ -3761,7 +3761,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return fromClause;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.SelectMany selectMany)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.SelectMany selectMany)
             {
                 var fromClause = new QueryFromClause();
 
@@ -3781,7 +3781,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return fromClause;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.Select select)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.Select select)
             {
                 var result = new QuerySelectClause();
                 result.AddChild(new CSharpTokenNode(Convert(select.Location), QuerySelectClause.SelectKeywordRole), QuerySelectClause.SelectKeywordRole);
@@ -3790,7 +3790,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.GroupBy groupBy)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.GroupBy groupBy)
             {
                 var result = new QueryGroupClause();
                 var location = LocationsBag.GetLocations(groupBy);
@@ -3808,7 +3808,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.Let let)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.Let let)
             {
                 var result = new QueryLetClause();
                 var location = LocationsBag.GetLocations(let);
@@ -3822,7 +3822,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.Where where)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.Where where)
             {
                 var result = new QueryWhereClause();
                 result.AddChild(new CSharpTokenNode(Convert(where.Location), QueryWhereClause.WhereKeywordRole), QueryWhereClause.WhereKeywordRole);
@@ -3831,7 +3831,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.Join join)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.Join join)
             {
                 var result = new QueryJoinClause();
                 var location = LocationsBag.GetLocations(join);
@@ -3868,7 +3868,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.GroupJoin groupJoin)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.GroupJoin groupJoin)
             {
                 var result = new QueryJoinClause();
                 var location = LocationsBag.GetLocations(groupJoin);
@@ -3904,7 +3904,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return result;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.OrderByAscending orderByAscending)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.OrderByAscending orderByAscending)
             {
                 currentQueryOrderClause = new QueryOrderClause();
                 var location2 = LocationsBag.GetLocations(orderByAscending.block);
@@ -3923,7 +3923,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return currentQueryOrderClause;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.OrderByDescending orderByDescending)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.OrderByDescending orderByDescending)
             {
                 currentQueryOrderClause = new QueryOrderClause();
 
@@ -3940,7 +3940,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return currentQueryOrderClause;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.ThenByAscending thenByAscending)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.ThenByAscending thenByAscending)
             {
                 var ordering = new QueryOrdering();
                 if (thenByAscending.Expr != null)
@@ -3955,7 +3955,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 return null;
             }
 
-            public override object Visit(ICSharpCode.NRefactory.MonoCSharp.Linq.ThenByDescending thenByDescending)
+            public override object Visit(IUnityCode.NRefactory.MonoCSharp.Linq.ThenByDescending thenByDescending)
             {
                 var ordering = new QueryOrdering();
                 if (thenByDescending.Expr != null)
@@ -4306,7 +4306,7 @@ namespace ICSharpCode.NRefactory.CSharp
             {
                 CompilationUnitCallback(top);
             }
-            var expr = top.LastYYValue as ICSharpCode.NRefactory.MonoCSharp.Expression;
+            var expr = top.LastYYValue as IUnityCode.NRefactory.MonoCSharp.Expression;
             if (expr != null)
                 conversionVisitor.Unit.TopExpression = expr.Accept(conversionVisitor) as AstNode;
 
@@ -4537,7 +4537,7 @@ namespace ICSharpCode.NRefactory.CSharp
                 var report = new Report(ctx, errorReportPrinter);
                 var session = new ParserSession();
                 session.LocationsBag = new LocationsBag();
-                var parser = new ICSharpCode.NRefactory.MonoCSharp.CSharpParser(reader, source_file, report, session);
+                var parser = new IUnityCode.NRefactory.MonoCSharp.CSharpParser(reader, source_file, report, session);
                 parser.Lexer.Line += initialLocation.Line - 1;
                 parser.Lexer.Column += initialLocation.Column - 1;
                 parser.Lexer.putback_char = Tokenizer.DocumentationXref;

@@ -19,9 +19,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	/// <summary>
 	/// Base class for <see cref="IUnresolvedEntity"/> implementations.

@@ -24,11 +24,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Editor;
 using System.IO;
 using System.Text;
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
     /// <summary>
     ///   This is an arbitrarily seekable StreamReader wrapper.

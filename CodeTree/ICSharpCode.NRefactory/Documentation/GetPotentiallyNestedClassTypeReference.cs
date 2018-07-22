@@ -18,10 +18,10 @@
 
 using System;
 using System.Linq;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem.Implementation;
 
-namespace ICSharpCode.NRefactory.Documentation
+namespace IUnityCode.NRefactory.Documentation
 {
 	/// <summary>
 	/// A type reference of the form 'Some.Namespace.TopLevelType.NestedType`n'.

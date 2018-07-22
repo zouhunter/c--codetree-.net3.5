@@ -28,9 +28,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public class EventDeclaration : EntityDeclaration
 	{

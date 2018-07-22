@@ -24,14 +24,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Editor;
 using System.Threading;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.Refactoring;
+using IUnityCode.NRefactory.TypeSystem;
 using System.Collections.Generic;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public enum FormattingMode {
 		OnTheFly,
@@ -87,7 +87,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ICSharpCode.NRefactory.CSharp.CSharpFormatter"/> class.
+		/// Initializes a new instance of the <see cref="IUnityCode.NRefactory.CSharp.CSharpFormatter"/> class.
 		/// </summary>
 		/// <param name="policy">The formatting policy to use.</param>
 		/// <param name="options">The text editor options (optional). Default is: TextEditorOptions.Default</param>

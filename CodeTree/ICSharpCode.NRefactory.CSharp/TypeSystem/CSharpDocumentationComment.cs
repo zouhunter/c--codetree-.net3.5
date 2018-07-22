@@ -17,13 +17,13 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.Documentation;
-using ICSharpCode.NRefactory.Editor;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.Documentation;
+using IUnityCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.TypeSystem;
 
-namespace ICSharpCode.NRefactory.CSharp.TypeSystem
+namespace IUnityCode.NRefactory.CSharp.TypeSystem
 {
 	/// <summary>
 	/// DocumentationComment with C# cref lookup.

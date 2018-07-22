@@ -22,11 +22,11 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.PatternMatching;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp;
+using IUnityCode.NRefactory.PatternMatching;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// Outputs the AST.

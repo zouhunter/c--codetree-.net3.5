@@ -23,9 +23,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using ICSharpCode.NRefactory.Semantics;
+using IUnityCode.NRefactory.Semantics;
 
-namespace ICSharpCode.NRefactory.Demo
+namespace IUnityCode.NRefactory.Demo
 {
 	/// <summary>
 	/// Description of SemanticTreeDialog.

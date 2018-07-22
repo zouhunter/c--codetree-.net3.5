@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System;
 
-namespace ICSharpCode.NRefactory.Completion
+namespace IUnityCode.NRefactory.Completion
 {
 	[Flags]
 	public enum DisplayFlags

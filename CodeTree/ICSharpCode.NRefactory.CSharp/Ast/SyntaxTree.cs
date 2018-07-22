@@ -26,15 +26,15 @@
 
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.CSharp.Resolver;
+using IUnityCode.NRefactory.CSharp.TypeSystem;
+using IUnityCode.NRefactory.TypeSystem;
 using System.Threading;
-using ICSharpCode.NRefactory.MonoCSharp;
+using IUnityCode.NRefactory.MonoCSharp;
 using System.IO;
-using ICSharpCode.NRefactory.Editor;
+using IUnityCode.NRefactory.Editor;
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	[Obsolete("CompilationUnit was renamed to SyntaxTree", true)]
 	public class CompilationUnit {}

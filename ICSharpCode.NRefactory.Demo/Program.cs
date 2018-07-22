@@ -19,7 +19,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace ICSharpCode.NRefactory.Demo
+namespace IUnityCode.NRefactory.Demo
 {
 	/// <summary>
 	/// Class with program entry point.

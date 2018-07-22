@@ -25,10 +25,10 @@
 // THE SOFTWARE.
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.Completion;
+using IUnityCode.NRefactory.TypeSystem;
+using IUnityCode.NRefactory.Completion;
 
-namespace ICSharpCode.NRefactory.CSharp.Completion
+namespace IUnityCode.NRefactory.CSharp.Completion
 {
 	public interface ICompletionDataFactory
 	{

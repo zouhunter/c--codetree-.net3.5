@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 
 using System;
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	/// <summary>
 	/// A text node contains text without syntactic or semantic information.

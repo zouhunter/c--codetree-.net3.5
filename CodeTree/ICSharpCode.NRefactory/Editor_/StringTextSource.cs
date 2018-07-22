@@ -19,7 +19,7 @@
 using System;
 using System.IO;
 
-namespace ICSharpCode.NRefactory.Editor
+namespace IUnityCode.NRefactory.Editor
 {
 	/// <summary>
 	/// Implements the ITextSource interface using a string.

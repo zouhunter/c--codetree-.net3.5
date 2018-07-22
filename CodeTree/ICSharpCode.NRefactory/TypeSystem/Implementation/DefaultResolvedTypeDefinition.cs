@@ -19,10 +19,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ICSharpCode.NRefactory.Documentation;
-using ICSharpCode.NRefactory.Utils;
+using IUnityCode.NRefactory.Documentation;
+using IUnityCode.NRefactory.Utils;
 
-namespace ICSharpCode.NRefactory.TypeSystem.Implementation
+namespace IUnityCode.NRefactory.TypeSystem.Implementation
 {
 	/// <summary>
 	/// Default implementation of <see cref="ITypeDefinition"/>.

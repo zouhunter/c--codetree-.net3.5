@@ -13,7 +13,7 @@
 using System;
 using System.Diagnostics;
 
-namespace ICSharpCode.NRefactory.MonoCSharp
+namespace IUnityCode.NRefactory.MonoCSharp
 {
 	public abstract class StructuralVisitor
 	{

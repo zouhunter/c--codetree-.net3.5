@@ -19,7 +19,7 @@ using System.Text;
 using System.Globalization;
 using System;
 
-namespace ICSharpCode.NRefactory.MonoCSharp {
+namespace IUnityCode.NRefactory.MonoCSharp {
 
 	public enum LanguageVersion
 	{

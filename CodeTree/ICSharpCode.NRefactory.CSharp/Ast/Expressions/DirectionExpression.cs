@@ -24,7 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-namespace ICSharpCode.NRefactory.CSharp
+namespace IUnityCode.NRefactory.CSharp
 {
 	public enum FieldDirection
 	{
@@ -47,7 +47,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		}
 		
 		public CSharpTokenNode FieldDirectionToken {
-			get { return FieldDirection == ICSharpCode.NRefactory.CSharp.FieldDirection.Ref ? GetChildByRole (RefKeywordRole) : GetChildByRole (OutKeywordRole); }
+			get { return FieldDirection == IUnityCode.NRefactory.CSharp.FieldDirection.Ref ? GetChildByRole (RefKeywordRole) : GetChildByRole (OutKeywordRole); }
 		}
 		
 		public Expression Expression {
